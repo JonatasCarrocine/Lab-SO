@@ -1,0 +1,1 @@
+Warning (10268): Verilog HDL information at lcd_display.v(17): always construct contains both blocking and non-blocking assignments File: C:/TesteLabFPGA-DEV/SO/lcd_display.v Line: 17

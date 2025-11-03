@@ -1,0 +1,16 @@
+Fitter Status : Successful - Sun Nov 02 23:48:03 2025
+Quartus Prime Version : 20.1.0 Build 711 06/05/2020 SJ Lite Edition
+Revision Name : iZero
+Top-level Entity Name : testeSemTemporizador
+Family : Cyclone IV E
+Device : EP4CE115F29C7
+Timing Models : Final
+Total logic elements : 261 / 114,480 ( < 1 % )
+    Total combinational functions : 233 / 114,480 ( < 1 % )
+    Dedicated logic registers : 155 / 114,480 ( < 1 % )
+Total registers : 155
+Total pins : 334 / 529 ( 63 % )
+Total virtual pins : 0
+Total memory bits : 2,048 / 3,981,312 ( < 1 % )
+Embedded Multiplier 9-bit elements : 0 / 532 ( 0 % )
+Total PLLs : 0 / 4 ( 0 % )

@@ -1,0 +1,1309 @@
+Analysis & Synthesis report for iZero
+Sun Nov 02 23:47:30 2025
+Quartus Prime Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Parallel Compilation
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. Analysis & Synthesis RAM Summary
+  9. Registers Removed During Synthesis
+ 10. General Register Statistics
+ 11. Inverted Register Statistics
+ 12. Registers Added for RAM Pass-Through Logic
+ 13. Registers Packed Into Inferred Megafunctions
+ 14. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 15. Source assignments for memoriaDados:inst4|altsyncram:mem_rtl_0|altsyncram_2vc1:auto_generated
+ 16. Source assignments for registradores:inst19|altsyncram:registradores_rtl_0|altsyncram_m8c1:auto_generated
+ 17. Source assignments for registradores:inst19|altsyncram:registradores_rtl_1|altsyncram_m8c1:auto_generated
+ 18. Source assignments for memoriaDados:inst4|altsyncram:mem_rtl_0|altsyncram_2vc1:auto_generated|altsyncram:ram_block1a0|altsyncram_qrh3:auto_generated
+ 19. Parameter Settings for User Entity Instance: memInstrucao:inst3
+ 20. Parameter Settings for Inferred Entity Instance: memoriaDados:inst4|altsyncram:mem_rtl_0
+ 21. Parameter Settings for Inferred Entity Instance: registradores:inst19|altsyncram:registradores_rtl_0
+ 22. Parameter Settings for Inferred Entity Instance: registradores:inst19|altsyncram:registradores_rtl_1
+ 23. Parameter Settings for Inferred Entity Instance: memoriaDados:inst4|altsyncram:mem_rtl_0|altsyncram_2vc1:auto_generated|altsyncram:ram_block1a0
+ 24. altsyncram Parameter Settings by Entity Instance
+ 25. Post-Synthesis Netlist Statistics for Top Partition
+ 26. Elapsed Time Per Partition
+ 27. Analysis & Synthesis Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 2020  Intel Corporation. All rights reserved.
+Your use of Intel Corporation's design tools, logic functions 
+and other software and tools, and any partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Intel Program License 
+Subscription Agreement, the Intel Quartus Prime License Agreement,
+the Intel FPGA IP License Agreement, or other applicable license
+agreement, including, without limitation, that your use is for
+the sole purpose of programming logic devices manufactured by
+Intel and sold by Intel or its authorized distributors.  Please
+refer to the applicable agreement for further details, at
+https://fpgasoftware.intel.com/eula.
+
+
+
++----------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                     ;
++------------------------------------+---------------------------------------------+
+; Analysis & Synthesis Status        ; Successful - Sun Nov 02 23:47:29 2025       ;
+; Quartus Prime Version              ; 20.1.0 Build 711 06/05/2020 SJ Lite Edition ;
+; Revision Name                      ; iZero                                       ;
+; Top-level Entity Name              ; testeSemTemporizador                        ;
+; Family                             ; Cyclone IV E                                ;
+; Total logic elements               ; 299                                         ;
+;     Total combinational functions  ; 232                                         ;
+;     Dedicated logic registers      ; 155                                         ;
+; Total registers                    ; 155                                         ;
+; Total pins                         ; 334                                         ;
+; Total virtual pins                 ; 0                                           ;
+; Total memory bits                  ; 2,048                                       ;
+; Embedded Multiplier 9-bit elements ; 0                                           ;
+; Total PLLs                         ; 0                                           ;
++------------------------------------+---------------------------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                                ;
++------------------------------------------------------------------+----------------------+--------------------+
+; Option                                                           ; Setting              ; Default Value      ;
++------------------------------------------------------------------+----------------------+--------------------+
+; Device                                                           ; EP4CE115F29C7        ;                    ;
+; Top-level entity name                                            ; testeSemTemporizador ; iZero              ;
+; Family name                                                      ; Cyclone IV E         ; Cyclone V          ;
+; Use smart compilation                                            ; On                   ; Off                ;
+; Preserve fewer node names                                        ; Off                  ; On                 ;
+; Timing-Driven Synthesis                                          ; Off                  ; On                 ;
+; Power Optimization During Synthesis                              ; Extra effort         ; Normal compilation ;
+; Enable parallel Assembler and Timing Analyzer during compilation ; On                   ; On                 ;
+; Enable compact report table                                      ; Off                  ; Off                ;
+; Restructure Multiplexers                                         ; Auto                 ; Auto               ;
+; Create Debugging Nodes for IP Cores                              ; Off                  ; Off                ;
+; Intel FPGA IP Evaluation Mode                                    ; Enable               ; Enable             ;
+; Verilog Version                                                  ; Verilog_2001         ; Verilog_2001       ;
+; VHDL Version                                                     ; VHDL_1993            ; VHDL_1993          ;
+; State Machine Processing                                         ; Auto                 ; Auto               ;
+; Safe State Machine                                               ; Off                  ; Off                ;
+; Extract Verilog State Machines                                   ; On                   ; On                 ;
+; Extract VHDL State Machines                                      ; On                   ; On                 ;
+; Ignore Verilog initial constructs                                ; Off                  ; Off                ;
+; Iteration limit for constant Verilog loops                       ; 5000                 ; 5000               ;
+; Iteration limit for non-constant Verilog loops                   ; 250                  ; 250                ;
+; Add Pass-Through Logic to Inferred RAMs                          ; On                   ; On                 ;
+; Infer RAMs from Raw Logic                                        ; On                   ; On                 ;
+; Parallel Synthesis                                               ; On                   ; On                 ;
+; DSP Block Balancing                                              ; Auto                 ; Auto               ;
+; NOT Gate Push-Back                                               ; On                   ; On                 ;
+; Power-Up Don't Care                                              ; On                   ; On                 ;
+; Remove Redundant Logic Cells                                     ; Off                  ; Off                ;
+; Remove Duplicate Registers                                       ; On                   ; On                 ;
+; Ignore CARRY Buffers                                             ; Off                  ; Off                ;
+; Ignore CASCADE Buffers                                           ; Off                  ; Off                ;
+; Ignore GLOBAL Buffers                                            ; Off                  ; Off                ;
+; Ignore ROW GLOBAL Buffers                                        ; Off                  ; Off                ;
+; Ignore LCELL Buffers                                             ; Off                  ; Off                ;
+; Ignore SOFT Buffers                                              ; On                   ; On                 ;
+; Limit AHDL Integers to 32 Bits                                   ; Off                  ; Off                ;
+; Optimization Technique                                           ; Balanced             ; Balanced           ;
+; Carry Chain Length                                               ; 70                   ; 70                 ;
+; Auto Carry Chains                                                ; On                   ; On                 ;
+; Auto Open-Drain Pins                                             ; On                   ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                            ; Off                  ; Off                ;
+; Auto ROM Replacement                                             ; On                   ; On                 ;
+; Auto RAM Replacement                                             ; On                   ; On                 ;
+; Auto DSP Block Replacement                                       ; On                   ; On                 ;
+; Auto Shift Register Replacement                                  ; Auto                 ; Auto               ;
+; Allow Shift Register Merging across Hierarchies                  ; Auto                 ; Auto               ;
+; Auto Clock Enable Replacement                                    ; On                   ; On                 ;
+; Strict RAM Replacement                                           ; Off                  ; Off                ;
+; Allow Synchronous Control Signals                                ; On                   ; On                 ;
+; Force Use of Synchronous Clear Signals                           ; Off                  ; Off                ;
+; Auto RAM Block Balancing                                         ; On                   ; On                 ;
+; Auto RAM to Logic Cell Conversion                                ; Off                  ; Off                ;
+; Auto Resource Sharing                                            ; Off                  ; Off                ;
+; Allow Any RAM Size For Recognition                               ; Off                  ; Off                ;
+; Allow Any ROM Size For Recognition                               ; Off                  ; Off                ;
+; Allow Any Shift Register Size For Recognition                    ; Off                  ; Off                ;
+; Use LogicLock Constraints during Resource Balancing              ; On                   ; On                 ;
+; Ignore translate_off and synthesis_off directives                ; Off                  ; Off                ;
+; Report Parameter Settings                                        ; On                   ; On                 ;
+; Report Source Assignments                                        ; On                   ; On                 ;
+; Report Connectivity Checks                                       ; On                   ; On                 ;
+; Ignore Maximum Fan-Out Assignments                               ; Off                  ; Off                ;
+; Synchronization Register Chain Length                            ; 2                    ; 2                  ;
+; HDL message level                                                ; Level2               ; Level2             ;
+; Suppress Register Optimization Related Messages                  ; Off                  ; Off                ;
+; Number of Removed Registers Reported in Synthesis Report         ; 5000                 ; 5000               ;
+; Number of Swept Nodes Reported in Synthesis Report               ; 5000                 ; 5000               ;
+; Number of Inverted Registers Reported in Synthesis Report        ; 100                  ; 100                ;
+; Clock MUX Protection                                             ; On                   ; On                 ;
+; Auto Gated Clock Conversion                                      ; Off                  ; Off                ;
+; Block Design Naming                                              ; Auto                 ; Auto               ;
+; SDC constraint protection                                        ; Off                  ; Off                ;
+; Synthesis Effort                                                 ; Auto                 ; Auto               ;
+; Shift Register Replacement - Allow Asynchronous Clear Signal     ; On                   ; On                 ;
+; Pre-Mapping Resynthesis Optimization                             ; Off                  ; Off                ;
+; Analysis & Synthesis Message Level                               ; Medium               ; Medium             ;
+; Disable Register Merging Across Hierarchies                      ; Auto                 ; Auto               ;
+; Resource Aware Inference For Block RAM                           ; On                   ; On                 ;
++------------------------------------------------------------------+----------------------+--------------------+
+
+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 12          ;
+; Maximum allowed            ; 6           ;
+;                            ;             ;
+; Average used               ; 1.00        ;
+; Maximum used               ; 1           ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     Processor 1            ; 100.0%      ;
++----------------------------+-------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                           ;
++----------------------------------+-----------------+------------------------------------+------------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type                          ; File Name with Absolute Path                                                 ; Library ;
++----------------------------------+-----------------+------------------------------------+------------------------------------------------------------------------------+---------+
+; ULA.v                            ; yes             ; User Verilog HDL File              ; C:/TesteLabFPGA-DEV/SO/ULA.v                                                 ;         ;
+; PC.v                             ; yes             ; User Verilog HDL File              ; C:/TesteLabFPGA-DEV/SO/PC.v                                                  ;         ;
+; memInstrucao.v                   ; yes             ; User Verilog HDL File              ; C:/TesteLabFPGA-DEV/SO/memInstrucao.v                                        ;         ;
+; registradores.v                  ; yes             ; User Verilog HDL File              ; C:/TesteLabFPGA-DEV/SO/registradores.v                                       ;         ;
+; extensorSinal.v                  ; yes             ; User Verilog HDL File              ; C:/TesteLabFPGA-DEV/SO/extensorSinal.v                                       ;         ;
+; somadorUm.v                      ; yes             ; User Verilog HDL File              ; C:/TesteLabFPGA-DEV/SO/somadorUm.v                                           ;         ;
+; mux_regdst.v                     ; yes             ; User Verilog HDL File              ; C:/TesteLabFPGA-DEV/SO/mux_regdst.v                                          ;         ;
+; mux_alusrc.v                     ; yes             ; User Verilog HDL File              ; C:/TesteLabFPGA-DEV/SO/mux_alusrc.v                                          ;         ;
+; memoriaDados.v                   ; yes             ; User Verilog HDL File              ; C:/TesteLabFPGA-DEV/SO/memoriaDados.v                                        ;         ;
+; mux_memtoreg.v                   ; yes             ; User Verilog HDL File              ; C:/TesteLabFPGA-DEV/SO/mux_memtoreg.v                                        ;         ;
+; aluControl.v                     ; yes             ; User Verilog HDL File              ; C:/TesteLabFPGA-DEV/SO/aluControl.v                                          ;         ;
+; teste_unidadeControle.v          ; yes             ; User Verilog HDL File              ; C:/TesteLabFPGA-DEV/SO/teste_unidadeControle.v                               ;         ;
+; teste_mux_jump.v                 ; yes             ; User Verilog HDL File              ; C:/TesteLabFPGA-DEV/SO/teste_mux_jump.v                                      ;         ;
+; testeSemTemporizador.bdf         ; yes             ; User Block Diagram/Schematic File  ; C:/TesteLabFPGA-DEV/SO/testeSemTemporizador.bdf                              ;         ;
+; altsyncram.tdf                   ; yes             ; Megafunction                       ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/altsyncram.tdf        ;         ;
+; stratix_ram_block.inc            ; yes             ; Megafunction                       ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/stratix_ram_block.inc ;         ;
+; lpm_mux.inc                      ; yes             ; Megafunction                       ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/lpm_mux.inc           ;         ;
+; lpm_decode.inc                   ; yes             ; Megafunction                       ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/lpm_decode.inc        ;         ;
+; aglobal201.inc                   ; yes             ; Megafunction                       ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/aglobal201.inc        ;         ;
+; a_rdenreg.inc                    ; yes             ; Megafunction                       ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/a_rdenreg.inc         ;         ;
+; altrom.inc                       ; yes             ; Megafunction                       ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/altrom.inc            ;         ;
+; altram.inc                       ; yes             ; Megafunction                       ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/altram.inc            ;         ;
+; altdpram.inc                     ; yes             ; Megafunction                       ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/altdpram.inc          ;         ;
+; db/altsyncram_2vc1.tdf           ; yes             ; Auto-Generated Megafunction        ; C:/TesteLabFPGA-DEV/SO/db/altsyncram_2vc1.tdf                                ;         ;
+; db/altsyncram_m8c1.tdf           ; yes             ; Auto-Generated Megafunction        ; C:/TesteLabFPGA-DEV/SO/db/altsyncram_m8c1.tdf                                ;         ;
+; db/altsyncram_qrh3.tdf           ; yes             ; Auto-Generated Megafunction        ; C:/TesteLabFPGA-DEV/SO/db/altsyncram_qrh3.tdf                                ;         ;
+; db/decode_msa.tdf                ; yes             ; Auto-Generated Megafunction        ; C:/TesteLabFPGA-DEV/SO/db/decode_msa.tdf                                     ;         ;
+; db/mux_job.tdf                   ; yes             ; Auto-Generated Megafunction        ; C:/TesteLabFPGA-DEV/SO/db/mux_job.tdf                                        ;         ;
++----------------------------------+-----------------+------------------------------------+------------------------------------------------------------------------------+---------+
+
+
++-------------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary                 ;
++---------------------------------------------+---------------+
+; Resource                                    ; Usage         ;
++---------------------------------------------+---------------+
+; Estimated Total logic elements              ; 299           ;
+;                                             ;               ;
+; Total combinational functions               ; 232           ;
+; Logic element usage by number of LUT inputs ;               ;
+;     -- 4 input functions                    ; 42            ;
+;     -- 3 input functions                    ; 142           ;
+;     -- <=2 input functions                  ; 48            ;
+;                                             ;               ;
+; Logic elements by mode                      ;               ;
+;     -- normal mode                          ; 170           ;
+;     -- arithmetic mode                      ; 62            ;
+;                                             ;               ;
+; Total registers                             ; 155           ;
+;     -- Dedicated logic registers            ; 155           ;
+;     -- I/O registers                        ; 0             ;
+;                                             ;               ;
+; I/O pins                                    ; 334           ;
+; Total memory bits                           ; 2048          ;
+;                                             ;               ;
+; Embedded Multiplier 9-bit elements          ; 0             ;
+;                                             ;               ;
+; Maximum fan-out node                        ; clockUm~input ;
+; Maximum fan-out                             ; 219           ;
+; Total fan-out                               ; 2320          ;
+; Average fan-out                             ; 2.07          ;
++---------------------------------------------+---------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                                                                    ;
++-------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+----------------------------------------------------------------------------------------------------------+-----------------------+--------------+
+; Compilation Hierarchy Node                ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                      ; Entity Name           ; Library Name ;
++-------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+----------------------------------------------------------------------------------------------------------+-----------------------+--------------+
+; |testeSemTemporizador                     ; 232 (1)             ; 155 (0)                   ; 2048        ; 0            ; 0       ; 0         ; 334  ; 0            ; |testeSemTemporizador                                                                                    ; testeSemTemporizador  ; work         ;
+;    |PC:inst|                              ; 1 (1)               ; 33 (33)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |testeSemTemporizador|PC:inst                                                                            ; PC                    ; work         ;
+;    |ULA:inst24|                           ; 32 (32)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |testeSemTemporizador|ULA:inst24                                                                         ; ULA                   ; work         ;
+;    |memInstrucao:inst3|                   ; 22 (22)             ; 40 (40)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |testeSemTemporizador|memInstrucao:inst3                                                                 ; memInstrucao          ; work         ;
+;    |mux_alusrc:inst23|                    ; 32 (32)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |testeSemTemporizador|mux_alusrc:inst23                                                                  ; mux_alusrc            ; work         ;
+;    |mux_regdst:inst17|                    ; 3 (3)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |testeSemTemporizador|mux_regdst:inst17                                                                  ; mux_regdst            ; work         ;
+;    |registradores:inst19|                 ; 72 (72)             ; 81 (81)                   ; 2048        ; 0            ; 0       ; 0         ; 0    ; 0            ; |testeSemTemporizador|registradores:inst19                                                               ; registradores         ; work         ;
+;       |altsyncram:registradores_rtl_0|    ; 0 (0)               ; 0 (0)                     ; 1024        ; 0            ; 0       ; 0         ; 0    ; 0            ; |testeSemTemporizador|registradores:inst19|altsyncram:registradores_rtl_0                                ; altsyncram            ; work         ;
+;          |altsyncram_m8c1:auto_generated| ; 0 (0)               ; 0 (0)                     ; 1024        ; 0            ; 0       ; 0         ; 0    ; 0            ; |testeSemTemporizador|registradores:inst19|altsyncram:registradores_rtl_0|altsyncram_m8c1:auto_generated ; altsyncram_m8c1       ; work         ;
+;       |altsyncram:registradores_rtl_1|    ; 0 (0)               ; 0 (0)                     ; 1024        ; 0            ; 0       ; 0         ; 0    ; 0            ; |testeSemTemporizador|registradores:inst19|altsyncram:registradores_rtl_1                                ; altsyncram            ; work         ;
+;          |altsyncram_m8c1:auto_generated| ; 0 (0)               ; 0 (0)                     ; 1024        ; 0            ; 0       ; 0         ; 0    ; 0            ; |testeSemTemporizador|registradores:inst19|altsyncram:registradores_rtl_1|altsyncram_m8c1:auto_generated ; altsyncram_m8c1       ; work         ;
+;    |somadorUm:inst15|                     ; 64 (64)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |testeSemTemporizador|somadorUm:inst15                                                                   ; somadorUm             ; work         ;
+;    |teste_unidadeControle:inst11|         ; 5 (5)               ; 1 (1)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |testeSemTemporizador|teste_unidadeControle:inst11                                                       ; teste_unidadeControle ; work         ;
++-------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+----------------------------------------------------------------------------------------------------------+-----------------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis RAM Summary                                                                                                                                                                  ;
++-----------------------------------------------------------------------------------------------+------+------------------+--------------+--------------+--------------+--------------+------+------+
+; Name                                                                                          ; Type ; Mode             ; Port A Depth ; Port A Width ; Port B Depth ; Port B Width ; Size ; MIF  ;
++-----------------------------------------------------------------------------------------------+------+------------------+--------------+--------------+--------------+--------------+------+------+
+; registradores:inst19|altsyncram:registradores_rtl_0|altsyncram_m8c1:auto_generated|ALTSYNCRAM ; AUTO ; Simple Dual Port ; 32           ; 32           ; 32           ; 32           ; 1024 ; None ;
+; registradores:inst19|altsyncram:registradores_rtl_1|altsyncram_m8c1:auto_generated|ALTSYNCRAM ; AUTO ; Simple Dual Port ; 32           ; 32           ; 32           ; 32           ; 1024 ; None ;
++-----------------------------------------------------------------------------------------------+------+------------------+--------------+--------------+--------------+--------------+------+------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                                                                                                                                      ;
++--------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------+
+; Register name                                                                                                                              ; Reason for Removal                         ;
++--------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------+
+; memInstrucao:inst3|pcInstr[4,6..15,21..25,31]                                                                                              ; Stuck at GND due to stuck port data_in     ;
+; registradores:inst19|registradores_rtl_0_bypass[2,4,6,8,10]                                                                                ; Stuck at GND due to stuck port data_in     ;
+; memInstrucao:inst3|pcInstr[30]                                                                                                             ; Merged with memInstrucao:inst3|pcInstr[27] ;
+; memInstrucao:inst3|pcInstr[26]                                                                                                             ; Merged with memInstrucao:inst3|pcInstr[28] ;
+; memInstrucao:inst3|pcInstr[19,20]                                                                                                          ; Merged with memInstrucao:inst3|pcInstr[29] ;
+; memInstrucao:inst3|pcInstr[5]                                                                                                              ; Merged with memInstrucao:inst3|pcInstr[18] ;
+; memInstrucao:inst3|pcInstr[0..2]                                                                                                           ; Merged with memInstrucao:inst3|pcInstr[3]  ;
+; memoriaDados:inst4|altsyncram:mem_rtl_0|altsyncram_2vc1:auto_generated|altsyncram:ram_block1a0|altsyncram_qrh3:auto_generated|wren_a_store ; Lost fanout                                ;
+; Total Number of Removed Registers = 31                                                                                                     ;                                            ;
++--------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------+
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 155   ;
+; Number of registers using Synchronous Clear  ; 48    ;
+; Number of registers using Synchronous Load   ; 0     ;
+; Number of registers using Asynchronous Clear ; 34    ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 32    ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++--------------------------------------------------+
+; Inverted Register Statistics                     ;
++----------------------------------------+---------+
+; Inverted Register                      ; Fan out ;
++----------------------------------------+---------+
+; memInstrucao:inst3|primeiro_ciclo      ; 36      ;
+; Total number of inverted registers = 1 ;         ;
++----------------------------------------+---------+
+
+
++------------------------------------------------------------------------------------------------+
+; Registers Added for RAM Pass-Through Logic                                                     ;
++-----------------------------------------------------+------------------------------------------+
+; Register Name                                       ; RAM Name                                 ;
++-----------------------------------------------------+------------------------------------------+
+; registradores:inst19|registradores_rtl_0_bypass[0]  ; registradores:inst19|registradores_rtl_0 ;
+; registradores:inst19|registradores_rtl_0_bypass[1]  ; registradores:inst19|registradores_rtl_0 ;
+; registradores:inst19|registradores_rtl_0_bypass[2]  ; registradores:inst19|registradores_rtl_0 ;
+; registradores:inst19|registradores_rtl_0_bypass[3]  ; registradores:inst19|registradores_rtl_0 ;
+; registradores:inst19|registradores_rtl_0_bypass[4]  ; registradores:inst19|registradores_rtl_0 ;
+; registradores:inst19|registradores_rtl_0_bypass[5]  ; registradores:inst19|registradores_rtl_0 ;
+; registradores:inst19|registradores_rtl_0_bypass[6]  ; registradores:inst19|registradores_rtl_0 ;
+; registradores:inst19|registradores_rtl_0_bypass[7]  ; registradores:inst19|registradores_rtl_0 ;
+; registradores:inst19|registradores_rtl_0_bypass[8]  ; registradores:inst19|registradores_rtl_0 ;
+; registradores:inst19|registradores_rtl_0_bypass[9]  ; registradores:inst19|registradores_rtl_0 ;
+; registradores:inst19|registradores_rtl_0_bypass[10] ; registradores:inst19|registradores_rtl_0 ;
+; registradores:inst19|registradores_rtl_0_bypass[11] ; registradores:inst19|registradores_rtl_0 ;
+; registradores:inst19|registradores_rtl_0_bypass[12] ; registradores:inst19|registradores_rtl_0 ;
+; registradores:inst19|registradores_rtl_0_bypass[13] ; registradores:inst19|registradores_rtl_0 ;
+; registradores:inst19|registradores_rtl_0_bypass[14] ; registradores:inst19|registradores_rtl_0 ;
+; registradores:inst19|registradores_rtl_0_bypass[15] ; registradores:inst19|registradores_rtl_0 ;
+; registradores:inst19|registradores_rtl_0_bypass[16] ; registradores:inst19|registradores_rtl_0 ;
+; registradores:inst19|registradores_rtl_0_bypass[17] ; registradores:inst19|registradores_rtl_0 ;
+; registradores:inst19|registradores_rtl_0_bypass[18] ; registradores:inst19|registradores_rtl_0 ;
+; registradores:inst19|registradores_rtl_0_bypass[19] ; registradores:inst19|registradores_rtl_0 ;
+; registradores:inst19|registradores_rtl_0_bypass[20] ; registradores:inst19|registradores_rtl_0 ;
+; registradores:inst19|registradores_rtl_0_bypass[21] ; registradores:inst19|registradores_rtl_0 ;
+; registradores:inst19|registradores_rtl_0_bypass[22] ; registradores:inst19|registradores_rtl_0 ;
+; registradores:inst19|registradores_rtl_0_bypass[23] ; registradores:inst19|registradores_rtl_0 ;
+; registradores:inst19|registradores_rtl_0_bypass[24] ; registradores:inst19|registradores_rtl_0 ;
+; registradores:inst19|registradores_rtl_0_bypass[25] ; registradores:inst19|registradores_rtl_0 ;
+; registradores:inst19|registradores_rtl_0_bypass[26] ; registradores:inst19|registradores_rtl_0 ;
+; registradores:inst19|registradores_rtl_0_bypass[27] ; registradores:inst19|registradores_rtl_0 ;
+; registradores:inst19|registradores_rtl_0_bypass[28] ; registradores:inst19|registradores_rtl_0 ;
+; registradores:inst19|registradores_rtl_0_bypass[29] ; registradores:inst19|registradores_rtl_0 ;
+; registradores:inst19|registradores_rtl_0_bypass[30] ; registradores:inst19|registradores_rtl_0 ;
+; registradores:inst19|registradores_rtl_0_bypass[31] ; registradores:inst19|registradores_rtl_0 ;
+; registradores:inst19|registradores_rtl_0_bypass[32] ; registradores:inst19|registradores_rtl_0 ;
+; registradores:inst19|registradores_rtl_0_bypass[33] ; registradores:inst19|registradores_rtl_0 ;
+; registradores:inst19|registradores_rtl_0_bypass[34] ; registradores:inst19|registradores_rtl_0 ;
+; registradores:inst19|registradores_rtl_0_bypass[35] ; registradores:inst19|registradores_rtl_0 ;
+; registradores:inst19|registradores_rtl_0_bypass[36] ; registradores:inst19|registradores_rtl_0 ;
+; registradores:inst19|registradores_rtl_0_bypass[37] ; registradores:inst19|registradores_rtl_0 ;
+; registradores:inst19|registradores_rtl_0_bypass[38] ; registradores:inst19|registradores_rtl_0 ;
+; registradores:inst19|registradores_rtl_0_bypass[39] ; registradores:inst19|registradores_rtl_0 ;
+; registradores:inst19|registradores_rtl_0_bypass[40] ; registradores:inst19|registradores_rtl_0 ;
+; registradores:inst19|registradores_rtl_0_bypass[41] ; registradores:inst19|registradores_rtl_0 ;
+; registradores:inst19|registradores_rtl_0_bypass[42] ; registradores:inst19|registradores_rtl_0 ;
+; registradores:inst19|registradores_rtl_1_bypass[0]  ; registradores:inst19|registradores_rtl_1 ;
+; registradores:inst19|registradores_rtl_1_bypass[1]  ; registradores:inst19|registradores_rtl_1 ;
+; registradores:inst19|registradores_rtl_1_bypass[2]  ; registradores:inst19|registradores_rtl_1 ;
+; registradores:inst19|registradores_rtl_1_bypass[3]  ; registradores:inst19|registradores_rtl_1 ;
+; registradores:inst19|registradores_rtl_1_bypass[4]  ; registradores:inst19|registradores_rtl_1 ;
+; registradores:inst19|registradores_rtl_1_bypass[5]  ; registradores:inst19|registradores_rtl_1 ;
+; registradores:inst19|registradores_rtl_1_bypass[6]  ; registradores:inst19|registradores_rtl_1 ;
+; registradores:inst19|registradores_rtl_1_bypass[7]  ; registradores:inst19|registradores_rtl_1 ;
+; registradores:inst19|registradores_rtl_1_bypass[8]  ; registradores:inst19|registradores_rtl_1 ;
+; registradores:inst19|registradores_rtl_1_bypass[9]  ; registradores:inst19|registradores_rtl_1 ;
+; registradores:inst19|registradores_rtl_1_bypass[10] ; registradores:inst19|registradores_rtl_1 ;
+; registradores:inst19|registradores_rtl_1_bypass[11] ; registradores:inst19|registradores_rtl_1 ;
+; registradores:inst19|registradores_rtl_1_bypass[12] ; registradores:inst19|registradores_rtl_1 ;
+; registradores:inst19|registradores_rtl_1_bypass[13] ; registradores:inst19|registradores_rtl_1 ;
+; registradores:inst19|registradores_rtl_1_bypass[14] ; registradores:inst19|registradores_rtl_1 ;
+; registradores:inst19|registradores_rtl_1_bypass[15] ; registradores:inst19|registradores_rtl_1 ;
+; registradores:inst19|registradores_rtl_1_bypass[16] ; registradores:inst19|registradores_rtl_1 ;
+; registradores:inst19|registradores_rtl_1_bypass[17] ; registradores:inst19|registradores_rtl_1 ;
+; registradores:inst19|registradores_rtl_1_bypass[18] ; registradores:inst19|registradores_rtl_1 ;
+; registradores:inst19|registradores_rtl_1_bypass[19] ; registradores:inst19|registradores_rtl_1 ;
+; registradores:inst19|registradores_rtl_1_bypass[20] ; registradores:inst19|registradores_rtl_1 ;
+; registradores:inst19|registradores_rtl_1_bypass[21] ; registradores:inst19|registradores_rtl_1 ;
+; registradores:inst19|registradores_rtl_1_bypass[22] ; registradores:inst19|registradores_rtl_1 ;
+; registradores:inst19|registradores_rtl_1_bypass[23] ; registradores:inst19|registradores_rtl_1 ;
+; registradores:inst19|registradores_rtl_1_bypass[24] ; registradores:inst19|registradores_rtl_1 ;
+; registradores:inst19|registradores_rtl_1_bypass[25] ; registradores:inst19|registradores_rtl_1 ;
+; registradores:inst19|registradores_rtl_1_bypass[26] ; registradores:inst19|registradores_rtl_1 ;
+; registradores:inst19|registradores_rtl_1_bypass[27] ; registradores:inst19|registradores_rtl_1 ;
+; registradores:inst19|registradores_rtl_1_bypass[28] ; registradores:inst19|registradores_rtl_1 ;
+; registradores:inst19|registradores_rtl_1_bypass[29] ; registradores:inst19|registradores_rtl_1 ;
+; registradores:inst19|registradores_rtl_1_bypass[30] ; registradores:inst19|registradores_rtl_1 ;
+; registradores:inst19|registradores_rtl_1_bypass[31] ; registradores:inst19|registradores_rtl_1 ;
+; registradores:inst19|registradores_rtl_1_bypass[32] ; registradores:inst19|registradores_rtl_1 ;
+; registradores:inst19|registradores_rtl_1_bypass[33] ; registradores:inst19|registradores_rtl_1 ;
+; registradores:inst19|registradores_rtl_1_bypass[34] ; registradores:inst19|registradores_rtl_1 ;
+; registradores:inst19|registradores_rtl_1_bypass[35] ; registradores:inst19|registradores_rtl_1 ;
+; registradores:inst19|registradores_rtl_1_bypass[36] ; registradores:inst19|registradores_rtl_1 ;
+; registradores:inst19|registradores_rtl_1_bypass[37] ; registradores:inst19|registradores_rtl_1 ;
+; registradores:inst19|registradores_rtl_1_bypass[38] ; registradores:inst19|registradores_rtl_1 ;
+; registradores:inst19|registradores_rtl_1_bypass[39] ; registradores:inst19|registradores_rtl_1 ;
+; registradores:inst19|registradores_rtl_1_bypass[40] ; registradores:inst19|registradores_rtl_1 ;
+; registradores:inst19|registradores_rtl_1_bypass[41] ; registradores:inst19|registradores_rtl_1 ;
+; registradores:inst19|registradores_rtl_1_bypass[42] ; registradores:inst19|registradores_rtl_1 ;
++-----------------------------------------------------+------------------------------------------+
+
+
++--------------------------------------------------------------------------+
+; Registers Packed Into Inferred Megafunctions                             ;
++------------------------------------+------------------------------+------+
+; Register Name                      ; Megafunction                 ; Type ;
++------------------------------------+------------------------------+------+
+; memoriaDados:inst4|readData[0..31] ; memoriaDados:inst4|mem_rtl_0 ; RAM  ;
++------------------------------------+------------------------------+------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                          ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------------+
+; 4:1                ; 27 bits   ; 54 LEs        ; 27 LEs               ; 27 LEs                 ; Yes        ; |testeSemTemporizador|PC:inst|pcAtual[16] ;
+; 4:1                ; 5 bits    ; 10 LEs        ; 10 LEs               ; 0 LEs                  ; Yes        ; |testeSemTemporizador|PC:inst|pcAtual[5]  ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------+
+; Source assignments for memoriaDados:inst4|altsyncram:mem_rtl_0|altsyncram_2vc1:auto_generated ;
++---------------------------------+--------------+------+---------------------------------------+
+; Assignment                      ; Value        ; From ; To                                    ;
++---------------------------------+--------------+------+---------------------------------------+
+; OPTIMIZE_POWER_DURING_SYNTHESIS ; EXTRA_EFFORT ; -    ; -                                     ;
++---------------------------------+--------------+------+---------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------------+
+; Source assignments for registradores:inst19|altsyncram:registradores_rtl_0|altsyncram_m8c1:auto_generated ;
++---------------------------------+--------------+------+---------------------------------------------------+
+; Assignment                      ; Value        ; From ; To                                                ;
++---------------------------------+--------------+------+---------------------------------------------------+
+; OPTIMIZE_POWER_DURING_SYNTHESIS ; EXTRA_EFFORT ; -    ; -                                                 ;
++---------------------------------+--------------+------+---------------------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------------+
+; Source assignments for registradores:inst19|altsyncram:registradores_rtl_1|altsyncram_m8c1:auto_generated ;
++---------------------------------+--------------+------+---------------------------------------------------+
+; Assignment                      ; Value        ; From ; To                                                ;
++---------------------------------+--------------+------+---------------------------------------------------+
+; OPTIMIZE_POWER_DURING_SYNTHESIS ; EXTRA_EFFORT ; -    ; -                                                 ;
++---------------------------------+--------------+------+---------------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Source assignments for memoriaDados:inst4|altsyncram:mem_rtl_0|altsyncram_2vc1:auto_generated|altsyncram:ram_block1a0|altsyncram_qrh3:auto_generated ;
++---------------------------------+--------------+------+----------------------------------------------------------------------------------------------+
+; Assignment                      ; Value        ; From ; To                                                                                           ;
++---------------------------------+--------------+------+----------------------------------------------------------------------------------------------+
+; OPTIMIZE_POWER_DURING_SYNTHESIS ; EXTRA_EFFORT ; -    ; -                                                                                            ;
++---------------------------------+--------------+------+----------------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: memInstrucao:inst3 ;
++----------------+-------+----------------------------------------+
+; Parameter Name ; Value ; Type                                   ;
++----------------+-------+----------------------------------------+
+; SIZE           ; 2048  ; Signed Integer                         ;
++----------------+-------+----------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: memoriaDados:inst4|altsyncram:mem_rtl_0 ;
++------------------------------------+----------------------+------------------------------+
+; Parameter Name                     ; Value                ; Type                         ;
++------------------------------------+----------------------+------------------------------+
+; BYTE_SIZE_BLOCK                    ; 8                    ; Untyped                      ;
+; AUTO_CARRY_CHAINS                  ; ON                   ; AUTO_CARRY                   ;
+; IGNORE_CARRY_BUFFERS               ; OFF                  ; IGNORE_CARRY                 ;
+; AUTO_CASCADE_CHAINS                ; ON                   ; AUTO_CASCADE                 ;
+; IGNORE_CASCADE_BUFFERS             ; OFF                  ; IGNORE_CASCADE               ;
+; WIDTH_BYTEENA                      ; 1                    ; Untyped                      ;
+; OPERATION_MODE                     ; DUAL_PORT            ; Untyped                      ;
+; WIDTH_A                            ; 32                   ; Untyped                      ;
+; WIDTHAD_A                          ; 11                   ; Untyped                      ;
+; NUMWORDS_A                         ; 2048                 ; Untyped                      ;
+; OUTDATA_REG_A                      ; UNREGISTERED         ; Untyped                      ;
+; ADDRESS_ACLR_A                     ; NONE                 ; Untyped                      ;
+; OUTDATA_ACLR_A                     ; NONE                 ; Untyped                      ;
+; WRCONTROL_ACLR_A                   ; NONE                 ; Untyped                      ;
+; INDATA_ACLR_A                      ; NONE                 ; Untyped                      ;
+; BYTEENA_ACLR_A                     ; NONE                 ; Untyped                      ;
+; WIDTH_B                            ; 32                   ; Untyped                      ;
+; WIDTHAD_B                          ; 11                   ; Untyped                      ;
+; NUMWORDS_B                         ; 2048                 ; Untyped                      ;
+; INDATA_REG_B                       ; CLOCK1               ; Untyped                      ;
+; WRCONTROL_WRADDRESS_REG_B          ; CLOCK1               ; Untyped                      ;
+; RDCONTROL_REG_B                    ; CLOCK1               ; Untyped                      ;
+; ADDRESS_REG_B                      ; CLOCK1               ; Untyped                      ;
+; OUTDATA_REG_B                      ; UNREGISTERED         ; Untyped                      ;
+; BYTEENA_REG_B                      ; CLOCK1               ; Untyped                      ;
+; INDATA_ACLR_B                      ; NONE                 ; Untyped                      ;
+; WRCONTROL_ACLR_B                   ; NONE                 ; Untyped                      ;
+; ADDRESS_ACLR_B                     ; NONE                 ; Untyped                      ;
+; OUTDATA_ACLR_B                     ; NONE                 ; Untyped                      ;
+; RDCONTROL_ACLR_B                   ; NONE                 ; Untyped                      ;
+; BYTEENA_ACLR_B                     ; NONE                 ; Untyped                      ;
+; WIDTH_BYTEENA_A                    ; 1                    ; Untyped                      ;
+; WIDTH_BYTEENA_B                    ; 1                    ; Untyped                      ;
+; RAM_BLOCK_TYPE                     ; AUTO                 ; Untyped                      ;
+; BYTE_SIZE                          ; 8                    ; Untyped                      ;
+; READ_DURING_WRITE_MODE_MIXED_PORTS ; DONT_CARE            ; Untyped                      ;
+; READ_DURING_WRITE_MODE_PORT_A      ; NEW_DATA_NO_NBE_READ ; Untyped                      ;
+; READ_DURING_WRITE_MODE_PORT_B      ; NEW_DATA_NO_NBE_READ ; Untyped                      ;
+; INIT_FILE                          ; UNUSED               ; Untyped                      ;
+; INIT_FILE_LAYOUT                   ; PORT_A               ; Untyped                      ;
+; MAXIMUM_DEPTH                      ; 0                    ; Untyped                      ;
+; CLOCK_ENABLE_INPUT_A               ; NORMAL               ; Untyped                      ;
+; CLOCK_ENABLE_INPUT_B               ; NORMAL               ; Untyped                      ;
+; CLOCK_ENABLE_OUTPUT_A              ; NORMAL               ; Untyped                      ;
+; CLOCK_ENABLE_OUTPUT_B              ; NORMAL               ; Untyped                      ;
+; CLOCK_ENABLE_CORE_A                ; USE_INPUT_CLKEN      ; Untyped                      ;
+; CLOCK_ENABLE_CORE_B                ; USE_INPUT_CLKEN      ; Untyped                      ;
+; ENABLE_ECC                         ; FALSE                ; Untyped                      ;
+; ECC_PIPELINE_STAGE_ENABLED         ; FALSE                ; Untyped                      ;
+; WIDTH_ECCSTATUS                    ; 3                    ; Untyped                      ;
+; DEVICE_FAMILY                      ; Cyclone IV E         ; Untyped                      ;
+; CBXI_PARAMETER                     ; altsyncram_2vc1      ; Untyped                      ;
++------------------------------------+----------------------+------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: registradores:inst19|altsyncram:registradores_rtl_0 ;
++------------------------------------+----------------------+------------------------------------------+
+; Parameter Name                     ; Value                ; Type                                     ;
++------------------------------------+----------------------+------------------------------------------+
+; BYTE_SIZE_BLOCK                    ; 8                    ; Untyped                                  ;
+; AUTO_CARRY_CHAINS                  ; ON                   ; AUTO_CARRY                               ;
+; IGNORE_CARRY_BUFFERS               ; OFF                  ; IGNORE_CARRY                             ;
+; AUTO_CASCADE_CHAINS                ; ON                   ; AUTO_CASCADE                             ;
+; IGNORE_CASCADE_BUFFERS             ; OFF                  ; IGNORE_CASCADE                           ;
+; WIDTH_BYTEENA                      ; 1                    ; Untyped                                  ;
+; OPERATION_MODE                     ; DUAL_PORT            ; Untyped                                  ;
+; WIDTH_A                            ; 32                   ; Untyped                                  ;
+; WIDTHAD_A                          ; 5                    ; Untyped                                  ;
+; NUMWORDS_A                         ; 32                   ; Untyped                                  ;
+; OUTDATA_REG_A                      ; UNREGISTERED         ; Untyped                                  ;
+; ADDRESS_ACLR_A                     ; NONE                 ; Untyped                                  ;
+; OUTDATA_ACLR_A                     ; NONE                 ; Untyped                                  ;
+; WRCONTROL_ACLR_A                   ; NONE                 ; Untyped                                  ;
+; INDATA_ACLR_A                      ; NONE                 ; Untyped                                  ;
+; BYTEENA_ACLR_A                     ; NONE                 ; Untyped                                  ;
+; WIDTH_B                            ; 32                   ; Untyped                                  ;
+; WIDTHAD_B                          ; 5                    ; Untyped                                  ;
+; NUMWORDS_B                         ; 32                   ; Untyped                                  ;
+; INDATA_REG_B                       ; CLOCK1               ; Untyped                                  ;
+; WRCONTROL_WRADDRESS_REG_B          ; CLOCK1               ; Untyped                                  ;
+; RDCONTROL_REG_B                    ; CLOCK1               ; Untyped                                  ;
+; ADDRESS_REG_B                      ; CLOCK0               ; Untyped                                  ;
+; OUTDATA_REG_B                      ; UNREGISTERED         ; Untyped                                  ;
+; BYTEENA_REG_B                      ; CLOCK1               ; Untyped                                  ;
+; INDATA_ACLR_B                      ; NONE                 ; Untyped                                  ;
+; WRCONTROL_ACLR_B                   ; NONE                 ; Untyped                                  ;
+; ADDRESS_ACLR_B                     ; NONE                 ; Untyped                                  ;
+; OUTDATA_ACLR_B                     ; NONE                 ; Untyped                                  ;
+; RDCONTROL_ACLR_B                   ; NONE                 ; Untyped                                  ;
+; BYTEENA_ACLR_B                     ; NONE                 ; Untyped                                  ;
+; WIDTH_BYTEENA_A                    ; 1                    ; Untyped                                  ;
+; WIDTH_BYTEENA_B                    ; 1                    ; Untyped                                  ;
+; RAM_BLOCK_TYPE                     ; AUTO                 ; Untyped                                  ;
+; BYTE_SIZE                          ; 8                    ; Untyped                                  ;
+; READ_DURING_WRITE_MODE_MIXED_PORTS ; DONT_CARE            ; Untyped                                  ;
+; READ_DURING_WRITE_MODE_PORT_A      ; NEW_DATA_NO_NBE_READ ; Untyped                                  ;
+; READ_DURING_WRITE_MODE_PORT_B      ; NEW_DATA_NO_NBE_READ ; Untyped                                  ;
+; INIT_FILE                          ; UNUSED               ; Untyped                                  ;
+; INIT_FILE_LAYOUT                   ; PORT_A               ; Untyped                                  ;
+; MAXIMUM_DEPTH                      ; 0                    ; Untyped                                  ;
+; CLOCK_ENABLE_INPUT_A               ; NORMAL               ; Untyped                                  ;
+; CLOCK_ENABLE_INPUT_B               ; NORMAL               ; Untyped                                  ;
+; CLOCK_ENABLE_OUTPUT_A              ; NORMAL               ; Untyped                                  ;
+; CLOCK_ENABLE_OUTPUT_B              ; NORMAL               ; Untyped                                  ;
+; CLOCK_ENABLE_CORE_A                ; USE_INPUT_CLKEN      ; Untyped                                  ;
+; CLOCK_ENABLE_CORE_B                ; USE_INPUT_CLKEN      ; Untyped                                  ;
+; ENABLE_ECC                         ; FALSE                ; Untyped                                  ;
+; ECC_PIPELINE_STAGE_ENABLED         ; FALSE                ; Untyped                                  ;
+; WIDTH_ECCSTATUS                    ; 3                    ; Untyped                                  ;
+; DEVICE_FAMILY                      ; Cyclone IV E         ; Untyped                                  ;
+; CBXI_PARAMETER                     ; altsyncram_m8c1      ; Untyped                                  ;
++------------------------------------+----------------------+------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: registradores:inst19|altsyncram:registradores_rtl_1 ;
++------------------------------------+----------------------+------------------------------------------+
+; Parameter Name                     ; Value                ; Type                                     ;
++------------------------------------+----------------------+------------------------------------------+
+; BYTE_SIZE_BLOCK                    ; 8                    ; Untyped                                  ;
+; AUTO_CARRY_CHAINS                  ; ON                   ; AUTO_CARRY                               ;
+; IGNORE_CARRY_BUFFERS               ; OFF                  ; IGNORE_CARRY                             ;
+; AUTO_CASCADE_CHAINS                ; ON                   ; AUTO_CASCADE                             ;
+; IGNORE_CASCADE_BUFFERS             ; OFF                  ; IGNORE_CASCADE                           ;
+; WIDTH_BYTEENA                      ; 1                    ; Untyped                                  ;
+; OPERATION_MODE                     ; DUAL_PORT            ; Untyped                                  ;
+; WIDTH_A                            ; 32                   ; Untyped                                  ;
+; WIDTHAD_A                          ; 5                    ; Untyped                                  ;
+; NUMWORDS_A                         ; 32                   ; Untyped                                  ;
+; OUTDATA_REG_A                      ; UNREGISTERED         ; Untyped                                  ;
+; ADDRESS_ACLR_A                     ; NONE                 ; Untyped                                  ;
+; OUTDATA_ACLR_A                     ; NONE                 ; Untyped                                  ;
+; WRCONTROL_ACLR_A                   ; NONE                 ; Untyped                                  ;
+; INDATA_ACLR_A                      ; NONE                 ; Untyped                                  ;
+; BYTEENA_ACLR_A                     ; NONE                 ; Untyped                                  ;
+; WIDTH_B                            ; 32                   ; Untyped                                  ;
+; WIDTHAD_B                          ; 5                    ; Untyped                                  ;
+; NUMWORDS_B                         ; 32                   ; Untyped                                  ;
+; INDATA_REG_B                       ; CLOCK1               ; Untyped                                  ;
+; WRCONTROL_WRADDRESS_REG_B          ; CLOCK1               ; Untyped                                  ;
+; RDCONTROL_REG_B                    ; CLOCK1               ; Untyped                                  ;
+; ADDRESS_REG_B                      ; CLOCK0               ; Untyped                                  ;
+; OUTDATA_REG_B                      ; UNREGISTERED         ; Untyped                                  ;
+; BYTEENA_REG_B                      ; CLOCK1               ; Untyped                                  ;
+; INDATA_ACLR_B                      ; NONE                 ; Untyped                                  ;
+; WRCONTROL_ACLR_B                   ; NONE                 ; Untyped                                  ;
+; ADDRESS_ACLR_B                     ; NONE                 ; Untyped                                  ;
+; OUTDATA_ACLR_B                     ; NONE                 ; Untyped                                  ;
+; RDCONTROL_ACLR_B                   ; NONE                 ; Untyped                                  ;
+; BYTEENA_ACLR_B                     ; NONE                 ; Untyped                                  ;
+; WIDTH_BYTEENA_A                    ; 1                    ; Untyped                                  ;
+; WIDTH_BYTEENA_B                    ; 1                    ; Untyped                                  ;
+; RAM_BLOCK_TYPE                     ; AUTO                 ; Untyped                                  ;
+; BYTE_SIZE                          ; 8                    ; Untyped                                  ;
+; READ_DURING_WRITE_MODE_MIXED_PORTS ; DONT_CARE            ; Untyped                                  ;
+; READ_DURING_WRITE_MODE_PORT_A      ; NEW_DATA_NO_NBE_READ ; Untyped                                  ;
+; READ_DURING_WRITE_MODE_PORT_B      ; NEW_DATA_NO_NBE_READ ; Untyped                                  ;
+; INIT_FILE                          ; UNUSED               ; Untyped                                  ;
+; INIT_FILE_LAYOUT                   ; PORT_A               ; Untyped                                  ;
+; MAXIMUM_DEPTH                      ; 0                    ; Untyped                                  ;
+; CLOCK_ENABLE_INPUT_A               ; NORMAL               ; Untyped                                  ;
+; CLOCK_ENABLE_INPUT_B               ; NORMAL               ; Untyped                                  ;
+; CLOCK_ENABLE_OUTPUT_A              ; NORMAL               ; Untyped                                  ;
+; CLOCK_ENABLE_OUTPUT_B              ; NORMAL               ; Untyped                                  ;
+; CLOCK_ENABLE_CORE_A                ; USE_INPUT_CLKEN      ; Untyped                                  ;
+; CLOCK_ENABLE_CORE_B                ; USE_INPUT_CLKEN      ; Untyped                                  ;
+; ENABLE_ECC                         ; FALSE                ; Untyped                                  ;
+; ECC_PIPELINE_STAGE_ENABLED         ; FALSE                ; Untyped                                  ;
+; WIDTH_ECCSTATUS                    ; 3                    ; Untyped                                  ;
+; DEVICE_FAMILY                      ; Cyclone IV E         ; Untyped                                  ;
+; CBXI_PARAMETER                     ; altsyncram_m8c1      ; Untyped                                  ;
++------------------------------------+----------------------+------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: memoriaDados:inst4|altsyncram:mem_rtl_0|altsyncram_2vc1:auto_generated|altsyncram:ram_block1a0 ;
++------------------------------------+------------------------+-----------------------------------------------------------------------------------+
+; Parameter Name                     ; Value                  ; Type                                                                              ;
++------------------------------------+------------------------+-----------------------------------------------------------------------------------+
+; BYTE_SIZE_BLOCK                    ; 8                      ; Untyped                                                                           ;
+; AUTO_CARRY_CHAINS                  ; ON                     ; AUTO_CARRY                                                                        ;
+; IGNORE_CARRY_BUFFERS               ; OFF                    ; IGNORE_CARRY                                                                      ;
+; AUTO_CASCADE_CHAINS                ; ON                     ; AUTO_CASCADE                                                                      ;
+; IGNORE_CASCADE_BUFFERS             ; OFF                    ; IGNORE_CASCADE                                                                    ;
+; WIDTH_BYTEENA                      ; 1                      ; Untyped                                                                           ;
+; OPERATION_MODE                     ; DUAL_PORT              ; Untyped                                                                           ;
+; WIDTH_A                            ; 32                     ; Untyped                                                                           ;
+; WIDTHAD_A                          ; 11                     ; Untyped                                                                           ;
+; NUMWORDS_A                         ; 2048                   ; Untyped                                                                           ;
+; OUTDATA_REG_A                      ; UNREGISTERED           ; Untyped                                                                           ;
+; ADDRESS_ACLR_A                     ; NONE                   ; Untyped                                                                           ;
+; OUTDATA_ACLR_A                     ; NONE                   ; Untyped                                                                           ;
+; WRCONTROL_ACLR_A                   ; NONE                   ; Untyped                                                                           ;
+; INDATA_ACLR_A                      ; NONE                   ; Untyped                                                                           ;
+; BYTEENA_ACLR_A                     ; NONE                   ; Untyped                                                                           ;
+; WIDTH_B                            ; 32                     ; Untyped                                                                           ;
+; WIDTHAD_B                          ; 11                     ; Untyped                                                                           ;
+; NUMWORDS_B                         ; 2048                   ; Untyped                                                                           ;
+; INDATA_REG_B                       ; CLOCK1                 ; Untyped                                                                           ;
+; WRCONTROL_WRADDRESS_REG_B          ; CLOCK1                 ; Untyped                                                                           ;
+; RDCONTROL_REG_B                    ; CLOCK1                 ; Untyped                                                                           ;
+; ADDRESS_REG_B                      ; CLOCK1                 ; Untyped                                                                           ;
+; OUTDATA_REG_B                      ; UNREGISTERED           ; Untyped                                                                           ;
+; BYTEENA_REG_B                      ; CLOCK1                 ; Untyped                                                                           ;
+; INDATA_ACLR_B                      ; NONE                   ; Untyped                                                                           ;
+; WRCONTROL_ACLR_B                   ; NONE                   ; Untyped                                                                           ;
+; ADDRESS_ACLR_B                     ; NONE                   ; Untyped                                                                           ;
+; OUTDATA_ACLR_B                     ; NONE                   ; Untyped                                                                           ;
+; RDCONTROL_ACLR_B                   ; NONE                   ; Untyped                                                                           ;
+; BYTEENA_ACLR_B                     ; NONE                   ; Untyped                                                                           ;
+; WIDTH_BYTEENA_A                    ; 1                      ; Untyped                                                                           ;
+; WIDTH_BYTEENA_B                    ; 1                      ; Untyped                                                                           ;
+; RAM_BLOCK_TYPE                     ; AUTO                   ; Untyped                                                                           ;
+; BYTE_SIZE                          ; 8                      ; Untyped                                                                           ;
+; READ_DURING_WRITE_MODE_MIXED_PORTS ; DONT_CARE              ; Untyped                                                                           ;
+; READ_DURING_WRITE_MODE_PORT_A      ; NEW_DATA_WITH_NBE_READ ; Untyped                                                                           ;
+; READ_DURING_WRITE_MODE_PORT_B      ; NEW_DATA_WITH_NBE_READ ; Untyped                                                                           ;
+; INIT_FILE                          ;                        ; Untyped                                                                           ;
+; INIT_FILE_LAYOUT                   ; PORT_B                 ; Untyped                                                                           ;
+; MAXIMUM_DEPTH                      ; 512                    ; Untyped                                                                           ;
+; CLOCK_ENABLE_INPUT_A               ; BYPASS                 ; Untyped                                                                           ;
+; CLOCK_ENABLE_INPUT_B               ; NORMAL                 ; Untyped                                                                           ;
+; CLOCK_ENABLE_OUTPUT_A              ; BYPASS                 ; Untyped                                                                           ;
+; CLOCK_ENABLE_OUTPUT_B              ; BYPASS                 ; Untyped                                                                           ;
+; CLOCK_ENABLE_CORE_A                ; NORMAL                 ; Untyped                                                                           ;
+; CLOCK_ENABLE_CORE_B                ; NORMAL                 ; Untyped                                                                           ;
+; ENABLE_ECC                         ; FALSE                  ; Untyped                                                                           ;
+; ECC_PIPELINE_STAGE_ENABLED         ; FALSE                  ; Untyped                                                                           ;
+; WIDTH_ECCSTATUS                    ; 3                      ; Untyped                                                                           ;
+; DEVICE_FAMILY                      ; Cyclone IV E           ; Untyped                                                                           ;
+; CBXI_PARAMETER                     ; altsyncram_qrh3        ; Untyped                                                                           ;
++------------------------------------+------------------------+-----------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------+
+; altsyncram Parameter Settings by Entity Instance                                                                                           ;
++-------------------------------------------+------------------------------------------------------------------------------------------------+
+; Name                                      ; Value                                                                                          ;
++-------------------------------------------+------------------------------------------------------------------------------------------------+
+; Number of entity instances                ; 4                                                                                              ;
+; Entity Instance                           ; memoriaDados:inst4|altsyncram:mem_rtl_0                                                        ;
+;     -- OPERATION_MODE                     ; DUAL_PORT                                                                                      ;
+;     -- WIDTH_A                            ; 32                                                                                             ;
+;     -- NUMWORDS_A                         ; 2048                                                                                           ;
+;     -- OUTDATA_REG_A                      ; UNREGISTERED                                                                                   ;
+;     -- WIDTH_B                            ; 32                                                                                             ;
+;     -- NUMWORDS_B                         ; 2048                                                                                           ;
+;     -- ADDRESS_REG_B                      ; CLOCK1                                                                                         ;
+;     -- OUTDATA_REG_B                      ; UNREGISTERED                                                                                   ;
+;     -- RAM_BLOCK_TYPE                     ; AUTO                                                                                           ;
+;     -- READ_DURING_WRITE_MODE_MIXED_PORTS ; DONT_CARE                                                                                      ;
+; Entity Instance                           ; registradores:inst19|altsyncram:registradores_rtl_0                                            ;
+;     -- OPERATION_MODE                     ; DUAL_PORT                                                                                      ;
+;     -- WIDTH_A                            ; 32                                                                                             ;
+;     -- NUMWORDS_A                         ; 32                                                                                             ;
+;     -- OUTDATA_REG_A                      ; UNREGISTERED                                                                                   ;
+;     -- WIDTH_B                            ; 32                                                                                             ;
+;     -- NUMWORDS_B                         ; 32                                                                                             ;
+;     -- ADDRESS_REG_B                      ; CLOCK0                                                                                         ;
+;     -- OUTDATA_REG_B                      ; UNREGISTERED                                                                                   ;
+;     -- RAM_BLOCK_TYPE                     ; AUTO                                                                                           ;
+;     -- READ_DURING_WRITE_MODE_MIXED_PORTS ; DONT_CARE                                                                                      ;
+; Entity Instance                           ; registradores:inst19|altsyncram:registradores_rtl_1                                            ;
+;     -- OPERATION_MODE                     ; DUAL_PORT                                                                                      ;
+;     -- WIDTH_A                            ; 32                                                                                             ;
+;     -- NUMWORDS_A                         ; 32                                                                                             ;
+;     -- OUTDATA_REG_A                      ; UNREGISTERED                                                                                   ;
+;     -- WIDTH_B                            ; 32                                                                                             ;
+;     -- NUMWORDS_B                         ; 32                                                                                             ;
+;     -- ADDRESS_REG_B                      ; CLOCK0                                                                                         ;
+;     -- OUTDATA_REG_B                      ; UNREGISTERED                                                                                   ;
+;     -- RAM_BLOCK_TYPE                     ; AUTO                                                                                           ;
+;     -- READ_DURING_WRITE_MODE_MIXED_PORTS ; DONT_CARE                                                                                      ;
+; Entity Instance                           ; memoriaDados:inst4|altsyncram:mem_rtl_0|altsyncram_2vc1:auto_generated|altsyncram:ram_block1a0 ;
+;     -- OPERATION_MODE                     ; DUAL_PORT                                                                                      ;
+;     -- WIDTH_A                            ; 32                                                                                             ;
+;     -- NUMWORDS_A                         ; 2048                                                                                           ;
+;     -- OUTDATA_REG_A                      ; UNREGISTERED                                                                                   ;
+;     -- WIDTH_B                            ; 32                                                                                             ;
+;     -- NUMWORDS_B                         ; 2048                                                                                           ;
+;     -- ADDRESS_REG_B                      ; CLOCK1                                                                                         ;
+;     -- OUTDATA_REG_B                      ; UNREGISTERED                                                                                   ;
+;     -- RAM_BLOCK_TYPE                     ; AUTO                                                                                           ;
+;     -- READ_DURING_WRITE_MODE_MIXED_PORTS ; DONT_CARE                                                                                      ;
++-------------------------------------------+------------------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------+
+; Post-Synthesis Netlist Statistics for Top Partition ;
++-----------------------+-----------------------------+
+; Type                  ; Count                       ;
++-----------------------+-----------------------------+
+; boundary_port         ; 334                         ;
+; cycloneiii_ff         ; 155                         ;
+;     CLR               ; 2                           ;
+;     ENA CLR           ; 5                           ;
+;     ENA CLR SCLR      ; 27                          ;
+;     SCLR              ; 21                          ;
+;     plain             ; 100                         ;
+; cycloneiii_lcell_comb ; 233                         ;
+;     arith             ; 62                          ;
+;         2 data inputs ; 31                          ;
+;         3 data inputs ; 31                          ;
+;     normal            ; 171                         ;
+;         0 data inputs ; 2                           ;
+;         1 data inputs ; 1                           ;
+;         2 data inputs ; 15                          ;
+;         3 data inputs ; 111                         ;
+;         4 data inputs ; 42                          ;
+; cycloneiii_ram_block  ; 64                          ;
+;                       ;                             ;
+; Max LUT depth         ; 8.10                        ;
+; Average LUT depth     ; 4.30                        ;
++-----------------------+-----------------------------+
+
+
++-------------------------------+
+; Elapsed Time Per Partition    ;
++----------------+--------------+
+; Partition Name ; Elapsed Time ;
++----------------+--------------+
+; Top            ; 00:00:01     ;
++----------------+--------------+
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus Prime Analysis & Synthesis
+    Info: Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
+    Info: Processing started: Sun Nov 02 23:47:19 2025
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off iZero -c iZero
+Info (16303): Aggressive Power optimization mode selected -- dynamic power will be prioritized at the potential cost of reduced timing performance and increased compilation time
+Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
+Info (20030): Parallel compilation is enabled and will use 6 of the 6 processors detected
+Info (12021): Found 1 design units, including 1 entities, in source file displayquatro.v
+    Info (12023): Found entity 1: displayQuatro File: C:/TesteLabFPGA-DEV/SO/displayQuatro.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file displaydois.v
+    Info (12023): Found entity 1: displayDois File: C:/TesteLabFPGA-DEV/SO/displayDois.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file ula.v
+    Info (12023): Found entity 1: ULA File: C:/TesteLabFPGA-DEV/SO/ULA.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file barramento.v
+    Info (12023): Found entity 1: barramento File: C:/TesteLabFPGA-DEV/SO/barramento.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file testecomponentes.bdf
+    Info (12023): Found entity 1: testeComponentes
+Info (12021): Found 1 design units, including 1 entities, in source file pc.v
+    Info (12023): Found entity 1: PC File: C:/TesteLabFPGA-DEV/SO/PC.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file processadorso.bdf
+    Info (12023): Found entity 1: processadorSO
+Info (12021): Found 1 design units, including 1 entities, in source file somador.v
+    Info (12023): Found entity 1: somador File: C:/TesteLabFPGA-DEV/SO/somador.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file meminstrucao.v
+    Info (12023): Found entity 1: memInstrucao File: C:/TesteLabFPGA-DEV/SO/memInstrucao.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file unidadecontrole.v
+    Info (12023): Found entity 1: unidadeControle File: C:/TesteLabFPGA-DEV/SO/unidadeControle.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file registradores.v
+    Info (12023): Found entity 1: registradores File: C:/TesteLabFPGA-DEV/SO/registradores.v Line: 1
+Warning (12090): Entity "mux" obtained from "mux.v" instead of from Quartus Prime megafunction library File: C:/TesteLabFPGA-DEV/SO/mux.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file mux.v
+    Info (12023): Found entity 1: mux File: C:/TesteLabFPGA-DEV/SO/mux.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file extensorsinal.v
+    Info (12023): Found entity 1: extensorSinal File: C:/TesteLabFPGA-DEV/SO/extensorSinal.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file somadorum.v
+    Info (12023): Found entity 1: somadorUm File: C:/TesteLabFPGA-DEV/SO/somadorUm.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file mux_regdst.v
+    Info (12023): Found entity 1: mux_regdst File: C:/TesteLabFPGA-DEV/SO/mux_regdst.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file mux_alusrc.v
+    Info (12023): Found entity 1: mux_alusrc File: C:/TesteLabFPGA-DEV/SO/mux_alusrc.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file memoriadados.v
+    Info (12023): Found entity 1: memoriaDados File: C:/TesteLabFPGA-DEV/SO/memoriaDados.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file mux_memtoreg.v
+    Info (12023): Found entity 1: mux_memtoreg File: C:/TesteLabFPGA-DEV/SO/mux_memtoreg.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file mux_branch.v
+    Info (12023): Found entity 1: mux_branch File: C:/TesteLabFPGA-DEV/SO/mux_branch.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file mux_jump.v
+    Info (12023): Found entity 1: mux_jump File: C:/TesteLabFPGA-DEV/SO/mux_jump.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file alucontrol.v
+    Info (12023): Found entity 1: aluControl File: C:/TesteLabFPGA-DEV/SO/aluControl.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file temporizador.v
+    Info (12023): Found entity 1: temporizador File: C:/TesteLabFPGA-DEV/SO/temporizador.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file teste_unidadecontrole.v
+    Info (12023): Found entity 1: teste_unidadeControle File: C:/TesteLabFPGA-DEV/SO/teste_unidadeControle.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file testeteste.bdf
+    Info (12023): Found entity 1: testeteste
+Info (12021): Found 1 design units, including 1 entities, in source file teste_mux_jump.v
+    Info (12023): Found entity 1: teste_mux_jump File: C:/TesteLabFPGA-DEV/SO/teste_mux_jump.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file display7seg_decimal.v
+    Info (12023): Found entity 1: display7seg_decimal File: C:/TesteLabFPGA-DEV/SO/display7seg_decimal.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file display7seg_2decimais.v
+    Info (12023): Found entity 1: display7seg_2decimais File: C:/TesteLabFPGA-DEV/SO/display7seg_2decimais.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file sistemaoperacional.bdf
+    Info (12023): Found entity 1: SistemaOperacional
+Info (12021): Found 1 design units, including 1 entities, in source file testesemtemporizador.bdf
+    Info (12023): Found entity 1: testeSemTemporizador
+Info (12021): Found 1 design units, including 1 entities, in source file teste.bdf
+    Info (12023): Found entity 1: teste
+Info (12021): Found 1 design units, including 1 entities, in source file testedisplay.bdf
+    Info (12023): Found entity 1: testeDisplay
+Info (12021): Found 1 design units, including 1 entities, in source file lcd_hello.v
+    Info (12023): Found entity 1: lcd_hello File: C:/TesteLabFPGA-DEV/SO/lcd_hello.v Line: 4
+Info (12021): Found 1 design units, including 1 entities, in source file lcd_integrado.v
+    Info (12023): Found entity 1: lcd_integrado File: C:/TesteLabFPGA-DEV/SO/lcd_integrado.v Line: 4
+Info (12021): Found 1 design units, including 1 entities, in source file testeintegrado.bdf
+    Info (12023): Found entity 1: testeIntegrado
+Info (12127): Elaborating entity "testeSemTemporizador" for the top level hierarchy
+Warning (275011): Block or symbol "aluControl" of instance "inst22" overlaps another block or symbol
+Info (12128): Elaborating entity "teste_unidadeControle" for hierarchy "teste_unidadeControle:inst11"
+Info (12128): Elaborating entity "memInstrucao" for hierarchy "memInstrucao:inst3"
+Warning (10030): Net "mem.data_a" at memInstrucao.v(11) has no driver or initial value, using a default initial value '0' File: C:/TesteLabFPGA-DEV/SO/memInstrucao.v Line: 11
+Warning (10030): Net "mem.waddr_a" at memInstrucao.v(11) has no driver or initial value, using a default initial value '0' File: C:/TesteLabFPGA-DEV/SO/memInstrucao.v Line: 11
+Warning (10030): Net "mem.we_a" at memInstrucao.v(11) has no driver or initial value, using a default initial value '0' File: C:/TesteLabFPGA-DEV/SO/memInstrucao.v Line: 11
+Info (12128): Elaborating entity "PC" for hierarchy "PC:inst"
+Info (12128): Elaborating entity "teste_mux_jump" for hierarchy "teste_mux_jump:inst10"
+Info (12128): Elaborating entity "registradores" for hierarchy "registradores:inst19"
+Info (12128): Elaborating entity "mux_memtoreg" for hierarchy "mux_memtoreg:inst6"
+Info (12128): Elaborating entity "memoriaDados" for hierarchy "memoriaDados:inst4"
+Info (12128): Elaborating entity "ULA" for hierarchy "ULA:inst24"
+Info (12128): Elaborating entity "aluControl" for hierarchy "aluControl:inst22"
+Info (12128): Elaborating entity "mux_alusrc" for hierarchy "mux_alusrc:inst23"
+Info (12128): Elaborating entity "extensorSinal" for hierarchy "extensorSinal:inst2"
+Info (12128): Elaborating entity "mux_regdst" for hierarchy "mux_regdst:inst17"
+Info (12128): Elaborating entity "somadorUm" for hierarchy "somadorUm:inst15"
+Warning (276020): Inferred RAM node "registradores:inst19|registradores_rtl_0" from synchronous design logic.  Pass-through logic has been added to match the read-during-write behavior of the original design.
+Warning (276020): Inferred RAM node "registradores:inst19|registradores_rtl_1" from synchronous design logic.  Pass-through logic has been added to match the read-during-write behavior of the original design.
+Warning (276027): Inferred dual-clock RAM node "memoriaDados:inst4|mem_rtl_0" from synchronous design logic.  The read-during-write behavior of a dual-clock RAM is undefined and may not match the behavior of the original design.
+Info (276014): Found 1 instances of uninferred RAM logic
+    Info (276007): RAM logic "memInstrucao:inst3|mem" is uninferred due to asynchronous read logic File: C:/TesteLabFPGA-DEV/SO/memInstrucao.v Line: 11
+Warning (127007): Memory Initialization File or Hexadecimal (Intel-Format) File "C:/TesteLabFPGA-DEV/SO/db/iZero.ram0_memInstrucao_c732f3c2.hdl.mif" contains "don't care" values -- overwriting them with 0s
+Info (19000): Inferred 3 megafunctions from design logic
+    Info (276029): Inferred altsyncram megafunction from the following design logic: "registradores:inst19|registradores_rtl_0" 
+        Info (286033): Parameter OPERATION_MODE set to DUAL_PORT
+        Info (286033): Parameter WIDTH_A set to 32
+        Info (286033): Parameter WIDTHAD_A set to 5
+        Info (286033): Parameter NUMWORDS_A set to 32
+        Info (286033): Parameter WIDTH_B set to 32
+        Info (286033): Parameter WIDTHAD_B set to 5
+        Info (286033): Parameter NUMWORDS_B set to 32
+        Info (286033): Parameter ADDRESS_ACLR_A set to NONE
+        Info (286033): Parameter OUTDATA_REG_B set to UNREGISTERED
+        Info (286033): Parameter ADDRESS_ACLR_B set to NONE
+        Info (286033): Parameter OUTDATA_ACLR_B set to NONE
+        Info (286033): Parameter ADDRESS_REG_B set to CLOCK0
+        Info (286033): Parameter INDATA_ACLR_A set to NONE
+        Info (286033): Parameter WRCONTROL_ACLR_A set to NONE
+    Info (276029): Inferred altsyncram megafunction from the following design logic: "registradores:inst19|registradores_rtl_1" 
+        Info (286033): Parameter OPERATION_MODE set to DUAL_PORT
+        Info (286033): Parameter WIDTH_A set to 32
+        Info (286033): Parameter WIDTHAD_A set to 5
+        Info (286033): Parameter NUMWORDS_A set to 32
+        Info (286033): Parameter WIDTH_B set to 32
+        Info (286033): Parameter WIDTHAD_B set to 5
+        Info (286033): Parameter NUMWORDS_B set to 32
+        Info (286033): Parameter ADDRESS_ACLR_A set to NONE
+        Info (286033): Parameter OUTDATA_REG_B set to UNREGISTERED
+        Info (286033): Parameter ADDRESS_ACLR_B set to NONE
+        Info (286033): Parameter OUTDATA_ACLR_B set to NONE
+        Info (286033): Parameter ADDRESS_REG_B set to CLOCK0
+        Info (286033): Parameter INDATA_ACLR_A set to NONE
+        Info (286033): Parameter WRCONTROL_ACLR_A set to NONE
+    Info (276029): Inferred altsyncram megafunction from the following design logic: "memoriaDados:inst4|mem_rtl_0" 
+        Info (286033): Parameter OPERATION_MODE set to DUAL_PORT
+        Info (286033): Parameter WIDTH_A set to 32
+        Info (286033): Parameter WIDTHAD_A set to 11
+        Info (286033): Parameter NUMWORDS_A set to 2048
+        Info (286033): Parameter WIDTH_B set to 32
+        Info (286033): Parameter WIDTHAD_B set to 11
+        Info (286033): Parameter NUMWORDS_B set to 2048
+        Info (286033): Parameter ADDRESS_ACLR_A set to NONE
+        Info (286033): Parameter OUTDATA_REG_B set to UNREGISTERED
+        Info (286033): Parameter ADDRESS_ACLR_B set to NONE
+        Info (286033): Parameter OUTDATA_ACLR_B set to NONE
+        Info (286033): Parameter ADDRESS_REG_B set to CLOCK1
+        Info (286033): Parameter INDATA_ACLR_A set to NONE
+        Info (286033): Parameter WRCONTROL_ACLR_A set to NONE
+Info (12130): Elaborated megafunction instantiation "memoriaDados:inst4|altsyncram:mem_rtl_0"
+Info (12133): Instantiated megafunction "memoriaDados:inst4|altsyncram:mem_rtl_0" with the following parameter:
+    Info (12134): Parameter "OPERATION_MODE" = "DUAL_PORT"
+    Info (12134): Parameter "WIDTH_A" = "32"
+    Info (12134): Parameter "WIDTHAD_A" = "11"
+    Info (12134): Parameter "NUMWORDS_A" = "2048"
+    Info (12134): Parameter "WIDTH_B" = "32"
+    Info (12134): Parameter "WIDTHAD_B" = "11"
+    Info (12134): Parameter "NUMWORDS_B" = "2048"
+    Info (12134): Parameter "ADDRESS_ACLR_A" = "NONE"
+    Info (12134): Parameter "OUTDATA_REG_B" = "UNREGISTERED"
+    Info (12134): Parameter "ADDRESS_ACLR_B" = "NONE"
+    Info (12134): Parameter "OUTDATA_ACLR_B" = "NONE"
+    Info (12134): Parameter "ADDRESS_REG_B" = "CLOCK1"
+    Info (12134): Parameter "INDATA_ACLR_A" = "NONE"
+    Info (12134): Parameter "WRCONTROL_ACLR_A" = "NONE"
+Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_2vc1.tdf
+    Info (12023): Found entity 1: altsyncram_2vc1 File: C:/TesteLabFPGA-DEV/SO/db/altsyncram_2vc1.tdf Line: 28
+Info (12130): Elaborated megafunction instantiation "registradores:inst19|altsyncram:registradores_rtl_0"
+Info (12133): Instantiated megafunction "registradores:inst19|altsyncram:registradores_rtl_0" with the following parameter:
+    Info (12134): Parameter "OPERATION_MODE" = "DUAL_PORT"
+    Info (12134): Parameter "WIDTH_A" = "32"
+    Info (12134): Parameter "WIDTHAD_A" = "5"
+    Info (12134): Parameter "NUMWORDS_A" = "32"
+    Info (12134): Parameter "WIDTH_B" = "32"
+    Info (12134): Parameter "WIDTHAD_B" = "5"
+    Info (12134): Parameter "NUMWORDS_B" = "32"
+    Info (12134): Parameter "ADDRESS_ACLR_A" = "NONE"
+    Info (12134): Parameter "OUTDATA_REG_B" = "UNREGISTERED"
+    Info (12134): Parameter "ADDRESS_ACLR_B" = "NONE"
+    Info (12134): Parameter "OUTDATA_ACLR_B" = "NONE"
+    Info (12134): Parameter "ADDRESS_REG_B" = "CLOCK0"
+    Info (12134): Parameter "INDATA_ACLR_A" = "NONE"
+    Info (12134): Parameter "WRCONTROL_ACLR_A" = "NONE"
+Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_m8c1.tdf
+    Info (12023): Found entity 1: altsyncram_m8c1 File: C:/TesteLabFPGA-DEV/SO/db/altsyncram_m8c1.tdf Line: 28
+Info (12130): Elaborated megafunction instantiation "registradores:inst19|altsyncram:registradores_rtl_1"
+Info (12133): Instantiated megafunction "registradores:inst19|altsyncram:registradores_rtl_1" with the following parameter:
+    Info (12134): Parameter "OPERATION_MODE" = "DUAL_PORT"
+    Info (12134): Parameter "WIDTH_A" = "32"
+    Info (12134): Parameter "WIDTHAD_A" = "5"
+    Info (12134): Parameter "NUMWORDS_A" = "32"
+    Info (12134): Parameter "WIDTH_B" = "32"
+    Info (12134): Parameter "WIDTHAD_B" = "5"
+    Info (12134): Parameter "NUMWORDS_B" = "32"
+    Info (12134): Parameter "ADDRESS_ACLR_A" = "NONE"
+    Info (12134): Parameter "OUTDATA_REG_B" = "UNREGISTERED"
+    Info (12134): Parameter "ADDRESS_ACLR_B" = "NONE"
+    Info (12134): Parameter "OUTDATA_ACLR_B" = "NONE"
+    Info (12134): Parameter "ADDRESS_REG_B" = "CLOCK0"
+    Info (12134): Parameter "INDATA_ACLR_A" = "NONE"
+    Info (12134): Parameter "WRCONTROL_ACLR_A" = "NONE"
+Info (270021): Converted the following 1 logical RAM block slices to smaller depth
+    Info (270020): Converted the following logical RAM block "memoriaDados:inst4|altsyncram:mem_rtl_0|altsyncram_2vc1:auto_generated|ALTSYNCRAM" slices to smaller maximum block depth of 512
+        Info (270019): RAM block slice "memoriaDados:inst4|altsyncram:mem_rtl_0|altsyncram_2vc1:auto_generated|ram_block1a0" File: C:/TesteLabFPGA-DEV/SO/db/altsyncram_2vc1.tdf Line: 39
+        Info (270019): RAM block slice "memoriaDados:inst4|altsyncram:mem_rtl_0|altsyncram_2vc1:auto_generated|ram_block1a1" File: C:/TesteLabFPGA-DEV/SO/db/altsyncram_2vc1.tdf Line: 69
+        Info (270019): RAM block slice "memoriaDados:inst4|altsyncram:mem_rtl_0|altsyncram_2vc1:auto_generated|ram_block1a2" File: C:/TesteLabFPGA-DEV/SO/db/altsyncram_2vc1.tdf Line: 99
+        Info (270019): RAM block slice "memoriaDados:inst4|altsyncram:mem_rtl_0|altsyncram_2vc1:auto_generated|ram_block1a3" File: C:/TesteLabFPGA-DEV/SO/db/altsyncram_2vc1.tdf Line: 129
+        Info (270019): RAM block slice "memoriaDados:inst4|altsyncram:mem_rtl_0|altsyncram_2vc1:auto_generated|ram_block1a4" File: C:/TesteLabFPGA-DEV/SO/db/altsyncram_2vc1.tdf Line: 159
+        Info (270019): RAM block slice "memoriaDados:inst4|altsyncram:mem_rtl_0|altsyncram_2vc1:auto_generated|ram_block1a5" File: C:/TesteLabFPGA-DEV/SO/db/altsyncram_2vc1.tdf Line: 189
+        Info (270019): RAM block slice "memoriaDados:inst4|altsyncram:mem_rtl_0|altsyncram_2vc1:auto_generated|ram_block1a6" File: C:/TesteLabFPGA-DEV/SO/db/altsyncram_2vc1.tdf Line: 219
+        Info (270019): RAM block slice "memoriaDados:inst4|altsyncram:mem_rtl_0|altsyncram_2vc1:auto_generated|ram_block1a7" File: C:/TesteLabFPGA-DEV/SO/db/altsyncram_2vc1.tdf Line: 249
+        Info (270019): RAM block slice "memoriaDados:inst4|altsyncram:mem_rtl_0|altsyncram_2vc1:auto_generated|ram_block1a8" File: C:/TesteLabFPGA-DEV/SO/db/altsyncram_2vc1.tdf Line: 279
+        Info (270019): RAM block slice "memoriaDados:inst4|altsyncram:mem_rtl_0|altsyncram_2vc1:auto_generated|ram_block1a9" File: C:/TesteLabFPGA-DEV/SO/db/altsyncram_2vc1.tdf Line: 309
+        Info (270019): RAM block slice "memoriaDados:inst4|altsyncram:mem_rtl_0|altsyncram_2vc1:auto_generated|ram_block1a10" File: C:/TesteLabFPGA-DEV/SO/db/altsyncram_2vc1.tdf Line: 339
+        Info (270019): RAM block slice "memoriaDados:inst4|altsyncram:mem_rtl_0|altsyncram_2vc1:auto_generated|ram_block1a11" File: C:/TesteLabFPGA-DEV/SO/db/altsyncram_2vc1.tdf Line: 369
+        Info (270019): RAM block slice "memoriaDados:inst4|altsyncram:mem_rtl_0|altsyncram_2vc1:auto_generated|ram_block1a12" File: C:/TesteLabFPGA-DEV/SO/db/altsyncram_2vc1.tdf Line: 399
+        Info (270019): RAM block slice "memoriaDados:inst4|altsyncram:mem_rtl_0|altsyncram_2vc1:auto_generated|ram_block1a13" File: C:/TesteLabFPGA-DEV/SO/db/altsyncram_2vc1.tdf Line: 429
+        Info (270019): RAM block slice "memoriaDados:inst4|altsyncram:mem_rtl_0|altsyncram_2vc1:auto_generated|ram_block1a14" File: C:/TesteLabFPGA-DEV/SO/db/altsyncram_2vc1.tdf Line: 459
+        Info (270019): RAM block slice "memoriaDados:inst4|altsyncram:mem_rtl_0|altsyncram_2vc1:auto_generated|ram_block1a15" File: C:/TesteLabFPGA-DEV/SO/db/altsyncram_2vc1.tdf Line: 489
+        Info (270019): RAM block slice "memoriaDados:inst4|altsyncram:mem_rtl_0|altsyncram_2vc1:auto_generated|ram_block1a16" File: C:/TesteLabFPGA-DEV/SO/db/altsyncram_2vc1.tdf Line: 519
+        Info (270019): RAM block slice "memoriaDados:inst4|altsyncram:mem_rtl_0|altsyncram_2vc1:auto_generated|ram_block1a17" File: C:/TesteLabFPGA-DEV/SO/db/altsyncram_2vc1.tdf Line: 549
+        Info (270019): RAM block slice "memoriaDados:inst4|altsyncram:mem_rtl_0|altsyncram_2vc1:auto_generated|ram_block1a18" File: C:/TesteLabFPGA-DEV/SO/db/altsyncram_2vc1.tdf Line: 579
+        Info (270019): RAM block slice "memoriaDados:inst4|altsyncram:mem_rtl_0|altsyncram_2vc1:auto_generated|ram_block1a19" File: C:/TesteLabFPGA-DEV/SO/db/altsyncram_2vc1.tdf Line: 609
+        Info (270019): RAM block slice "memoriaDados:inst4|altsyncram:mem_rtl_0|altsyncram_2vc1:auto_generated|ram_block1a20" File: C:/TesteLabFPGA-DEV/SO/db/altsyncram_2vc1.tdf Line: 639
+        Info (270019): RAM block slice "memoriaDados:inst4|altsyncram:mem_rtl_0|altsyncram_2vc1:auto_generated|ram_block1a21" File: C:/TesteLabFPGA-DEV/SO/db/altsyncram_2vc1.tdf Line: 669
+        Info (270019): RAM block slice "memoriaDados:inst4|altsyncram:mem_rtl_0|altsyncram_2vc1:auto_generated|ram_block1a22" File: C:/TesteLabFPGA-DEV/SO/db/altsyncram_2vc1.tdf Line: 699
+        Info (270019): RAM block slice "memoriaDados:inst4|altsyncram:mem_rtl_0|altsyncram_2vc1:auto_generated|ram_block1a23" File: C:/TesteLabFPGA-DEV/SO/db/altsyncram_2vc1.tdf Line: 729
+        Info (270019): RAM block slice "memoriaDados:inst4|altsyncram:mem_rtl_0|altsyncram_2vc1:auto_generated|ram_block1a24" File: C:/TesteLabFPGA-DEV/SO/db/altsyncram_2vc1.tdf Line: 759
+        Info (270019): RAM block slice "memoriaDados:inst4|altsyncram:mem_rtl_0|altsyncram_2vc1:auto_generated|ram_block1a25" File: C:/TesteLabFPGA-DEV/SO/db/altsyncram_2vc1.tdf Line: 789
+        Info (270019): RAM block slice "memoriaDados:inst4|altsyncram:mem_rtl_0|altsyncram_2vc1:auto_generated|ram_block1a26" File: C:/TesteLabFPGA-DEV/SO/db/altsyncram_2vc1.tdf Line: 819
+        Info (270019): RAM block slice "memoriaDados:inst4|altsyncram:mem_rtl_0|altsyncram_2vc1:auto_generated|ram_block1a27" File: C:/TesteLabFPGA-DEV/SO/db/altsyncram_2vc1.tdf Line: 849
+        Info (270019): RAM block slice "memoriaDados:inst4|altsyncram:mem_rtl_0|altsyncram_2vc1:auto_generated|ram_block1a28" File: C:/TesteLabFPGA-DEV/SO/db/altsyncram_2vc1.tdf Line: 879
+        Info (270019): RAM block slice "memoriaDados:inst4|altsyncram:mem_rtl_0|altsyncram_2vc1:auto_generated|ram_block1a29" File: C:/TesteLabFPGA-DEV/SO/db/altsyncram_2vc1.tdf Line: 909
+        Info (270019): RAM block slice "memoriaDados:inst4|altsyncram:mem_rtl_0|altsyncram_2vc1:auto_generated|ram_block1a30" File: C:/TesteLabFPGA-DEV/SO/db/altsyncram_2vc1.tdf Line: 939
+        Info (270019): RAM block slice "memoriaDados:inst4|altsyncram:mem_rtl_0|altsyncram_2vc1:auto_generated|ram_block1a31" File: C:/TesteLabFPGA-DEV/SO/db/altsyncram_2vc1.tdf Line: 969
+Info (12130): Elaborated megafunction instantiation "memoriaDados:inst4|altsyncram:mem_rtl_0|altsyncram_2vc1:auto_generated|altsyncram:ram_block1a0" File: C:/TesteLabFPGA-DEV/SO/db/altsyncram_2vc1.tdf Line: 39
+Info (12133): Instantiated megafunction "memoriaDados:inst4|altsyncram:mem_rtl_0|altsyncram_2vc1:auto_generated|altsyncram:ram_block1a0" with the following parameter: File: C:/TesteLabFPGA-DEV/SO/db/altsyncram_2vc1.tdf Line: 39
+    Info (12134): Parameter "LPM_TYPE" = "altsyncram"
+    Info (12134): Parameter "OPERATION_MODE" = "DUAL_PORT"
+    Info (12134): Parameter "WIDTH_A" = "32"
+    Info (12134): Parameter "WIDTHAD_A" = "11"
+    Info (12134): Parameter "NUMWORDS_A" = "2048"
+    Info (12134): Parameter "OUTDATA_REG_A" = "UNREGISTERED"
+    Info (12134): Parameter "ADDRESS_ACLR_A" = "NONE"
+    Info (12134): Parameter "OUTDATA_ACLR_A" = "NONE"
+    Info (12134): Parameter "WRCONTROL_ACLR_A" = "NONE"
+    Info (12134): Parameter "INDATA_ACLR_A" = "NONE"
+    Info (12134): Parameter "BYTEENA_ACLR_A" = "NONE"
+    Info (12134): Parameter "CLOCK_ENABLE_INPUT_A" = "BYPASS"
+    Info (12134): Parameter "CLOCK_ENABLE_OUTPUT_A" = "BYPASS"
+    Info (12134): Parameter "WIDTH_B" = "32"
+    Info (12134): Parameter "WIDTHAD_B" = "11"
+    Info (12134): Parameter "NUMWORDS_B" = "2048"
+    Info (12134): Parameter "INDATA_REG_B" = "UNUSED"
+    Info (12134): Parameter "WRCONTROL_WRADDRESS_REG_B" = "CLOCK1"
+    Info (12134): Parameter "RDCONTROL_REG_B" = "CLOCK1"
+    Info (12134): Parameter "ADDRESS_REG_B" = "CLOCK1"
+    Info (12134): Parameter "BYTEENA_REG_B" = "UNUSED"
+    Info (12134): Parameter "OUTDATA_REG_B" = "UNREGISTERED"
+    Info (12134): Parameter "INDATA_ACLR_B" = "NONE"
+    Info (12134): Parameter "WRCONTROL_ACLR_B" = "NONE"
+    Info (12134): Parameter "ADDRESS_ACLR_B" = "NONE"
+    Info (12134): Parameter "OUTDATA_ACLR_B" = "NONE"
+    Info (12134): Parameter "RDCONTROL_ACLR_B" = "NONE"
+    Info (12134): Parameter "BYTEENA_ACLR_B" = "NONE"
+    Info (12134): Parameter "CLOCK_ENABLE_INPUT_B" = "NORMAL"
+    Info (12134): Parameter "CLOCK_ENABLE_OUTPUT_B" = "BYPASS"
+    Info (12134): Parameter "WIDTH_BYTEENA_A" = "1"
+    Info (12134): Parameter "WIDTH_BYTEENA_B" = "1"
+    Info (12134): Parameter "RAM_BLOCK_TYPE" = "AUTO"
+    Info (12134): Parameter "BYTE_SIZE" = "8"
+    Info (12134): Parameter "READ_DURING_WRITE_MODE_MIXED_PORTS" = "DONT_CARE"
+    Info (12134): Parameter "INIT_FILE" = ""
+    Info (12134): Parameter "INIT_FILE_LAYOUT" = "PORT_B"
+    Info (12134): Parameter "MAXIMUM_DEPTH" = "512"
+    Info (12134): Parameter "ENABLE_RUNTIME_MOD" = "NO"
+    Info (12134): Parameter "INSTANCE_NAME" = "UNUSED"
+    Info (12134): Parameter "ENABLE_ECC" = "FALSE"
+    Info (12134): Parameter "ECCSTATUS_REG" = "UNREGISTERED"
+    Info (12134): Parameter "CLOCK_ENABLE_CORE_A" = "NORMAL"
+    Info (12134): Parameter "CLOCK_ENABLE_CORE_B" = "NORMAL"
+    Info (12134): Parameter "READ_DURING_WRITE_MODE_PORT_A" = "NEW_DATA_WITH_NBE_READ"
+    Info (12134): Parameter "READ_DURING_WRITE_MODE_PORT_B" = "NEW_DATA_WITH_NBE_READ"
+    Info (12134): Parameter "CLOCK_ENABLE_ECC_STATUS" = "NORMAL"
+Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_qrh3.tdf
+    Info (12023): Found entity 1: altsyncram_qrh3 File: C:/TesteLabFPGA-DEV/SO/db/altsyncram_qrh3.tdf Line: 32
+Info (12021): Found 1 design units, including 1 entities, in source file db/decode_msa.tdf
+    Info (12023): Found entity 1: decode_msa File: C:/TesteLabFPGA-DEV/SO/db/decode_msa.tdf Line: 23
+Info (12021): Found 1 design units, including 1 entities, in source file db/mux_job.tdf
+    Info (12023): Found entity 1: mux_job File: C:/TesteLabFPGA-DEV/SO/db/mux_job.tdf Line: 23
+Warning (14284): Synthesized away the following node(s):
+    Warning (14285): Synthesized away the following RAM node(s):
+        Warning (14320): Synthesized away node "memoriaDados:inst4|altsyncram:mem_rtl_0|altsyncram_2vc1:auto_generated|altsyncram:ram_block1a0|altsyncram_qrh3:auto_generated|ram_block1a0" File: C:/TesteLabFPGA-DEV/SO/db/altsyncram_qrh3.tdf Line: 51
+        Warning (14320): Synthesized away node "memoriaDados:inst4|altsyncram:mem_rtl_0|altsyncram_2vc1:auto_generated|altsyncram:ram_block1a0|altsyncram_qrh3:auto_generated|ram_block1a1" File: C:/TesteLabFPGA-DEV/SO/db/altsyncram_qrh3.tdf Line: 81
+        Warning (14320): Synthesized away node "memoriaDados:inst4|altsyncram:mem_rtl_0|altsyncram_2vc1:auto_generated|altsyncram:ram_block1a0|altsyncram_qrh3:auto_generated|ram_block1a2" File: C:/TesteLabFPGA-DEV/SO/db/altsyncram_qrh3.tdf Line: 111
+        Warning (14320): Synthesized away node "memoriaDados:inst4|altsyncram:mem_rtl_0|altsyncram_2vc1:auto_generated|altsyncram:ram_block1a0|altsyncram_qrh3:auto_generated|ram_block1a3" File: C:/TesteLabFPGA-DEV/SO/db/altsyncram_qrh3.tdf Line: 141
+        Warning (14320): Synthesized away node "memoriaDados:inst4|altsyncram:mem_rtl_0|altsyncram_2vc1:auto_generated|altsyncram:ram_block1a0|altsyncram_qrh3:auto_generated|ram_block1a4" File: C:/TesteLabFPGA-DEV/SO/db/altsyncram_qrh3.tdf Line: 171
+        Warning (14320): Synthesized away node "memoriaDados:inst4|altsyncram:mem_rtl_0|altsyncram_2vc1:auto_generated|altsyncram:ram_block1a0|altsyncram_qrh3:auto_generated|ram_block1a5" File: C:/TesteLabFPGA-DEV/SO/db/altsyncram_qrh3.tdf Line: 201
+        Warning (14320): Synthesized away node "memoriaDados:inst4|altsyncram:mem_rtl_0|altsyncram_2vc1:auto_generated|altsyncram:ram_block1a0|altsyncram_qrh3:auto_generated|ram_block1a6" File: C:/TesteLabFPGA-DEV/SO/db/altsyncram_qrh3.tdf Line: 231
+        Warning (14320): Synthesized away node "memoriaDados:inst4|altsyncram:mem_rtl_0|altsyncram_2vc1:auto_generated|altsyncram:ram_block1a0|altsyncram_qrh3:auto_generated|ram_block1a7" File: C:/TesteLabFPGA-DEV/SO/db/altsyncram_qrh3.tdf Line: 261
+        Warning (14320): Synthesized away node "memoriaDados:inst4|altsyncram:mem_rtl_0|altsyncram_2vc1:auto_generated|altsyncram:ram_block1a0|altsyncram_qrh3:auto_generated|ram_block1a8" File: C:/TesteLabFPGA-DEV/SO/db/altsyncram_qrh3.tdf Line: 291
+        Warning (14320): Synthesized away node "memoriaDados:inst4|altsyncram:mem_rtl_0|altsyncram_2vc1:auto_generated|altsyncram:ram_block1a0|altsyncram_qrh3:auto_generated|ram_block1a9" File: C:/TesteLabFPGA-DEV/SO/db/altsyncram_qrh3.tdf Line: 321
+        Warning (14320): Synthesized away node "memoriaDados:inst4|altsyncram:mem_rtl_0|altsyncram_2vc1:auto_generated|altsyncram:ram_block1a0|altsyncram_qrh3:auto_generated|ram_block1a10" File: C:/TesteLabFPGA-DEV/SO/db/altsyncram_qrh3.tdf Line: 351
+        Warning (14320): Synthesized away node "memoriaDados:inst4|altsyncram:mem_rtl_0|altsyncram_2vc1:auto_generated|altsyncram:ram_block1a0|altsyncram_qrh3:auto_generated|ram_block1a11" File: C:/TesteLabFPGA-DEV/SO/db/altsyncram_qrh3.tdf Line: 381
+        Warning (14320): Synthesized away node "memoriaDados:inst4|altsyncram:mem_rtl_0|altsyncram_2vc1:auto_generated|altsyncram:ram_block1a0|altsyncram_qrh3:auto_generated|ram_block1a12" File: C:/TesteLabFPGA-DEV/SO/db/altsyncram_qrh3.tdf Line: 411
+        Warning (14320): Synthesized away node "memoriaDados:inst4|altsyncram:mem_rtl_0|altsyncram_2vc1:auto_generated|altsyncram:ram_block1a0|altsyncram_qrh3:auto_generated|ram_block1a13" File: C:/TesteLabFPGA-DEV/SO/db/altsyncram_qrh3.tdf Line: 441
+        Warning (14320): Synthesized away node "memoriaDados:inst4|altsyncram:mem_rtl_0|altsyncram_2vc1:auto_generated|altsyncram:ram_block1a0|altsyncram_qrh3:auto_generated|ram_block1a14" File: C:/TesteLabFPGA-DEV/SO/db/altsyncram_qrh3.tdf Line: 471
+        Warning (14320): Synthesized away node "memoriaDados:inst4|altsyncram:mem_rtl_0|altsyncram_2vc1:auto_generated|altsyncram:ram_block1a0|altsyncram_qrh3:auto_generated|ram_block1a15" File: C:/TesteLabFPGA-DEV/SO/db/altsyncram_qrh3.tdf Line: 501
+        Warning (14320): Synthesized away node "memoriaDados:inst4|altsyncram:mem_rtl_0|altsyncram_2vc1:auto_generated|altsyncram:ram_block1a0|altsyncram_qrh3:auto_generated|ram_block1a16" File: C:/TesteLabFPGA-DEV/SO/db/altsyncram_qrh3.tdf Line: 531
+        Warning (14320): Synthesized away node "memoriaDados:inst4|altsyncram:mem_rtl_0|altsyncram_2vc1:auto_generated|altsyncram:ram_block1a0|altsyncram_qrh3:auto_generated|ram_block1a17" File: C:/TesteLabFPGA-DEV/SO/db/altsyncram_qrh3.tdf Line: 561
+        Warning (14320): Synthesized away node "memoriaDados:inst4|altsyncram:mem_rtl_0|altsyncram_2vc1:auto_generated|altsyncram:ram_block1a0|altsyncram_qrh3:auto_generated|ram_block1a18" File: C:/TesteLabFPGA-DEV/SO/db/altsyncram_qrh3.tdf Line: 591
+        Warning (14320): Synthesized away node "memoriaDados:inst4|altsyncram:mem_rtl_0|altsyncram_2vc1:auto_generated|altsyncram:ram_block1a0|altsyncram_qrh3:auto_generated|ram_block1a19" File: C:/TesteLabFPGA-DEV/SO/db/altsyncram_qrh3.tdf Line: 621
+        Warning (14320): Synthesized away node "memoriaDados:inst4|altsyncram:mem_rtl_0|altsyncram_2vc1:auto_generated|altsyncram:ram_block1a0|altsyncram_qrh3:auto_generated|ram_block1a20" File: C:/TesteLabFPGA-DEV/SO/db/altsyncram_qrh3.tdf Line: 651
+        Warning (14320): Synthesized away node "memoriaDados:inst4|altsyncram:mem_rtl_0|altsyncram_2vc1:auto_generated|altsyncram:ram_block1a0|altsyncram_qrh3:auto_generated|ram_block1a21" File: C:/TesteLabFPGA-DEV/SO/db/altsyncram_qrh3.tdf Line: 681
+        Warning (14320): Synthesized away node "memoriaDados:inst4|altsyncram:mem_rtl_0|altsyncram_2vc1:auto_generated|altsyncram:ram_block1a0|altsyncram_qrh3:auto_generated|ram_block1a22" File: C:/TesteLabFPGA-DEV/SO/db/altsyncram_qrh3.tdf Line: 711
+        Warning (14320): Synthesized away node "memoriaDados:inst4|altsyncram:mem_rtl_0|altsyncram_2vc1:auto_generated|altsyncram:ram_block1a0|altsyncram_qrh3:auto_generated|ram_block1a23" File: C:/TesteLabFPGA-DEV/SO/db/altsyncram_qrh3.tdf Line: 741
+        Warning (14320): Synthesized away node "memoriaDados:inst4|altsyncram:mem_rtl_0|altsyncram_2vc1:auto_generated|altsyncram:ram_block1a0|altsyncram_qrh3:auto_generated|ram_block1a24" File: C:/TesteLabFPGA-DEV/SO/db/altsyncram_qrh3.tdf Line: 771
+        Warning (14320): Synthesized away node "memoriaDados:inst4|altsyncram:mem_rtl_0|altsyncram_2vc1:auto_generated|altsyncram:ram_block1a0|altsyncram_qrh3:auto_generated|ram_block1a25" File: C:/TesteLabFPGA-DEV/SO/db/altsyncram_qrh3.tdf Line: 801
+        Warning (14320): Synthesized away node "memoriaDados:inst4|altsyncram:mem_rtl_0|altsyncram_2vc1:auto_generated|altsyncram:ram_block1a0|altsyncram_qrh3:auto_generated|ram_block1a26" File: C:/TesteLabFPGA-DEV/SO/db/altsyncram_qrh3.tdf Line: 831
+        Warning (14320): Synthesized away node "memoriaDados:inst4|altsyncram:mem_rtl_0|altsyncram_2vc1:auto_generated|altsyncram:ram_block1a0|altsyncram_qrh3:auto_generated|ram_block1a27" File: C:/TesteLabFPGA-DEV/SO/db/altsyncram_qrh3.tdf Line: 861
+        Warning (14320): Synthesized away node "memoriaDados:inst4|altsyncram:mem_rtl_0|altsyncram_2vc1:auto_generated|altsyncram:ram_block1a0|altsyncram_qrh3:auto_generated|ram_block1a28" File: C:/TesteLabFPGA-DEV/SO/db/altsyncram_qrh3.tdf Line: 891
+        Warning (14320): Synthesized away node "memoriaDados:inst4|altsyncram:mem_rtl_0|altsyncram_2vc1:auto_generated|altsyncram:ram_block1a0|altsyncram_qrh3:auto_generated|ram_block1a29" File: C:/TesteLabFPGA-DEV/SO/db/altsyncram_qrh3.tdf Line: 921
+        Warning (14320): Synthesized away node "memoriaDados:inst4|altsyncram:mem_rtl_0|altsyncram_2vc1:auto_generated|altsyncram:ram_block1a0|altsyncram_qrh3:auto_generated|ram_block1a30" File: C:/TesteLabFPGA-DEV/SO/db/altsyncram_qrh3.tdf Line: 951
+        Warning (14320): Synthesized away node "memoriaDados:inst4|altsyncram:mem_rtl_0|altsyncram_2vc1:auto_generated|altsyncram:ram_block1a0|altsyncram_qrh3:auto_generated|ram_block1a31" File: C:/TesteLabFPGA-DEV/SO/db/altsyncram_qrh3.tdf Line: 981
+        Warning (14320): Synthesized away node "memoriaDados:inst4|altsyncram:mem_rtl_0|altsyncram_2vc1:auto_generated|altsyncram:ram_block1a0|altsyncram_qrh3:auto_generated|ram_block1a32" File: C:/TesteLabFPGA-DEV/SO/db/altsyncram_qrh3.tdf Line: 1011
+        Warning (14320): Synthesized away node "memoriaDados:inst4|altsyncram:mem_rtl_0|altsyncram_2vc1:auto_generated|altsyncram:ram_block1a0|altsyncram_qrh3:auto_generated|ram_block1a33" File: C:/TesteLabFPGA-DEV/SO/db/altsyncram_qrh3.tdf Line: 1041
+        Warning (14320): Synthesized away node "memoriaDados:inst4|altsyncram:mem_rtl_0|altsyncram_2vc1:auto_generated|altsyncram:ram_block1a0|altsyncram_qrh3:auto_generated|ram_block1a34" File: C:/TesteLabFPGA-DEV/SO/db/altsyncram_qrh3.tdf Line: 1071
+        Warning (14320): Synthesized away node "memoriaDados:inst4|altsyncram:mem_rtl_0|altsyncram_2vc1:auto_generated|altsyncram:ram_block1a0|altsyncram_qrh3:auto_generated|ram_block1a35" File: C:/TesteLabFPGA-DEV/SO/db/altsyncram_qrh3.tdf Line: 1101
+        Warning (14320): Synthesized away node "memoriaDados:inst4|altsyncram:mem_rtl_0|altsyncram_2vc1:auto_generated|altsyncram:ram_block1a0|altsyncram_qrh3:auto_generated|ram_block1a36" File: C:/TesteLabFPGA-DEV/SO/db/altsyncram_qrh3.tdf Line: 1131
+        Warning (14320): Synthesized away node "memoriaDados:inst4|altsyncram:mem_rtl_0|altsyncram_2vc1:auto_generated|altsyncram:ram_block1a0|altsyncram_qrh3:auto_generated|ram_block1a37" File: C:/TesteLabFPGA-DEV/SO/db/altsyncram_qrh3.tdf Line: 1161
+        Warning (14320): Synthesized away node "memoriaDados:inst4|altsyncram:mem_rtl_0|altsyncram_2vc1:auto_generated|altsyncram:ram_block1a0|altsyncram_qrh3:auto_generated|ram_block1a38" File: C:/TesteLabFPGA-DEV/SO/db/altsyncram_qrh3.tdf Line: 1191
+        Warning (14320): Synthesized away node "memoriaDados:inst4|altsyncram:mem_rtl_0|altsyncram_2vc1:auto_generated|altsyncram:ram_block1a0|altsyncram_qrh3:auto_generated|ram_block1a39" File: C:/TesteLabFPGA-DEV/SO/db/altsyncram_qrh3.tdf Line: 1221
+        Warning (14320): Synthesized away node "memoriaDados:inst4|altsyncram:mem_rtl_0|altsyncram_2vc1:auto_generated|altsyncram:ram_block1a0|altsyncram_qrh3:auto_generated|ram_block1a40" File: C:/TesteLabFPGA-DEV/SO/db/altsyncram_qrh3.tdf Line: 1251
+        Warning (14320): Synthesized away node "memoriaDados:inst4|altsyncram:mem_rtl_0|altsyncram_2vc1:auto_generated|altsyncram:ram_block1a0|altsyncram_qrh3:auto_generated|ram_block1a41" File: C:/TesteLabFPGA-DEV/SO/db/altsyncram_qrh3.tdf Line: 1281
+        Warning (14320): Synthesized away node "memoriaDados:inst4|altsyncram:mem_rtl_0|altsyncram_2vc1:auto_generated|altsyncram:ram_block1a0|altsyncram_qrh3:auto_generated|ram_block1a42" File: C:/TesteLabFPGA-DEV/SO/db/altsyncram_qrh3.tdf Line: 1311
+        Warning (14320): Synthesized away node "memoriaDados:inst4|altsyncram:mem_rtl_0|altsyncram_2vc1:auto_generated|altsyncram:ram_block1a0|altsyncram_qrh3:auto_generated|ram_block1a43" File: C:/TesteLabFPGA-DEV/SO/db/altsyncram_qrh3.tdf Line: 1341
+        Warning (14320): Synthesized away node "memoriaDados:inst4|altsyncram:mem_rtl_0|altsyncram_2vc1:auto_generated|altsyncram:ram_block1a0|altsyncram_qrh3:auto_generated|ram_block1a44" File: C:/TesteLabFPGA-DEV/SO/db/altsyncram_qrh3.tdf Line: 1371
+        Warning (14320): Synthesized away node "memoriaDados:inst4|altsyncram:mem_rtl_0|altsyncram_2vc1:auto_generated|altsyncram:ram_block1a0|altsyncram_qrh3:auto_generated|ram_block1a45" File: C:/TesteLabFPGA-DEV/SO/db/altsyncram_qrh3.tdf Line: 1401
+        Warning (14320): Synthesized away node "memoriaDados:inst4|altsyncram:mem_rtl_0|altsyncram_2vc1:auto_generated|altsyncram:ram_block1a0|altsyncram_qrh3:auto_generated|ram_block1a46" File: C:/TesteLabFPGA-DEV/SO/db/altsyncram_qrh3.tdf Line: 1431
+        Warning (14320): Synthesized away node "memoriaDados:inst4|altsyncram:mem_rtl_0|altsyncram_2vc1:auto_generated|altsyncram:ram_block1a0|altsyncram_qrh3:auto_generated|ram_block1a47" File: C:/TesteLabFPGA-DEV/SO/db/altsyncram_qrh3.tdf Line: 1461
+        Warning (14320): Synthesized away node "memoriaDados:inst4|altsyncram:mem_rtl_0|altsyncram_2vc1:auto_generated|altsyncram:ram_block1a0|altsyncram_qrh3:auto_generated|ram_block1a48" File: C:/TesteLabFPGA-DEV/SO/db/altsyncram_qrh3.tdf Line: 1491
+        Warning (14320): Synthesized away node "memoriaDados:inst4|altsyncram:mem_rtl_0|altsyncram_2vc1:auto_generated|altsyncram:ram_block1a0|altsyncram_qrh3:auto_generated|ram_block1a49" File: C:/TesteLabFPGA-DEV/SO/db/altsyncram_qrh3.tdf Line: 1521
+        Warning (14320): Synthesized away node "memoriaDados:inst4|altsyncram:mem_rtl_0|altsyncram_2vc1:auto_generated|altsyncram:ram_block1a0|altsyncram_qrh3:auto_generated|ram_block1a50" File: C:/TesteLabFPGA-DEV/SO/db/altsyncram_qrh3.tdf Line: 1551
+        Warning (14320): Synthesized away node "memoriaDados:inst4|altsyncram:mem_rtl_0|altsyncram_2vc1:auto_generated|altsyncram:ram_block1a0|altsyncram_qrh3:auto_generated|ram_block1a51" File: C:/TesteLabFPGA-DEV/SO/db/altsyncram_qrh3.tdf Line: 1581
+        Warning (14320): Synthesized away node "memoriaDados:inst4|altsyncram:mem_rtl_0|altsyncram_2vc1:auto_generated|altsyncram:ram_block1a0|altsyncram_qrh3:auto_generated|ram_block1a52" File: C:/TesteLabFPGA-DEV/SO/db/altsyncram_qrh3.tdf Line: 1611
+        Warning (14320): Synthesized away node "memoriaDados:inst4|altsyncram:mem_rtl_0|altsyncram_2vc1:auto_generated|altsyncram:ram_block1a0|altsyncram_qrh3:auto_generated|ram_block1a53" File: C:/TesteLabFPGA-DEV/SO/db/altsyncram_qrh3.tdf Line: 1641
+        Warning (14320): Synthesized away node "memoriaDados:inst4|altsyncram:mem_rtl_0|altsyncram_2vc1:auto_generated|altsyncram:ram_block1a0|altsyncram_qrh3:auto_generated|ram_block1a54" File: C:/TesteLabFPGA-DEV/SO/db/altsyncram_qrh3.tdf Line: 1671
+        Warning (14320): Synthesized away node "memoriaDados:inst4|altsyncram:mem_rtl_0|altsyncram_2vc1:auto_generated|altsyncram:ram_block1a0|altsyncram_qrh3:auto_generated|ram_block1a55" File: C:/TesteLabFPGA-DEV/SO/db/altsyncram_qrh3.tdf Line: 1701
+        Warning (14320): Synthesized away node "memoriaDados:inst4|altsyncram:mem_rtl_0|altsyncram_2vc1:auto_generated|altsyncram:ram_block1a0|altsyncram_qrh3:auto_generated|ram_block1a56" File: C:/TesteLabFPGA-DEV/SO/db/altsyncram_qrh3.tdf Line: 1731
+        Warning (14320): Synthesized away node "memoriaDados:inst4|altsyncram:mem_rtl_0|altsyncram_2vc1:auto_generated|altsyncram:ram_block1a0|altsyncram_qrh3:auto_generated|ram_block1a57" File: C:/TesteLabFPGA-DEV/SO/db/altsyncram_qrh3.tdf Line: 1761
+        Warning (14320): Synthesized away node "memoriaDados:inst4|altsyncram:mem_rtl_0|altsyncram_2vc1:auto_generated|altsyncram:ram_block1a0|altsyncram_qrh3:auto_generated|ram_block1a58" File: C:/TesteLabFPGA-DEV/SO/db/altsyncram_qrh3.tdf Line: 1791
+        Warning (14320): Synthesized away node "memoriaDados:inst4|altsyncram:mem_rtl_0|altsyncram_2vc1:auto_generated|altsyncram:ram_block1a0|altsyncram_qrh3:auto_generated|ram_block1a59" File: C:/TesteLabFPGA-DEV/SO/db/altsyncram_qrh3.tdf Line: 1821
+        Warning (14320): Synthesized away node "memoriaDados:inst4|altsyncram:mem_rtl_0|altsyncram_2vc1:auto_generated|altsyncram:ram_block1a0|altsyncram_qrh3:auto_generated|ram_block1a60" File: C:/TesteLabFPGA-DEV/SO/db/altsyncram_qrh3.tdf Line: 1851
+        Warning (14320): Synthesized away node "memoriaDados:inst4|altsyncram:mem_rtl_0|altsyncram_2vc1:auto_generated|altsyncram:ram_block1a0|altsyncram_qrh3:auto_generated|ram_block1a61" File: C:/TesteLabFPGA-DEV/SO/db/altsyncram_qrh3.tdf Line: 1881
+        Warning (14320): Synthesized away node "memoriaDados:inst4|altsyncram:mem_rtl_0|altsyncram_2vc1:auto_generated|altsyncram:ram_block1a0|altsyncram_qrh3:auto_generated|ram_block1a62" File: C:/TesteLabFPGA-DEV/SO/db/altsyncram_qrh3.tdf Line: 1911
+        Warning (14320): Synthesized away node "memoriaDados:inst4|altsyncram:mem_rtl_0|altsyncram_2vc1:auto_generated|altsyncram:ram_block1a0|altsyncram_qrh3:auto_generated|ram_block1a63" File: C:/TesteLabFPGA-DEV/SO/db/altsyncram_qrh3.tdf Line: 1941
+        Warning (14320): Synthesized away node "memoriaDados:inst4|altsyncram:mem_rtl_0|altsyncram_2vc1:auto_generated|altsyncram:ram_block1a0|altsyncram_qrh3:auto_generated|ram_block1a64" File: C:/TesteLabFPGA-DEV/SO/db/altsyncram_qrh3.tdf Line: 1971
+        Warning (14320): Synthesized away node "memoriaDados:inst4|altsyncram:mem_rtl_0|altsyncram_2vc1:auto_generated|altsyncram:ram_block1a0|altsyncram_qrh3:auto_generated|ram_block1a65" File: C:/TesteLabFPGA-DEV/SO/db/altsyncram_qrh3.tdf Line: 2001
+        Warning (14320): Synthesized away node "memoriaDados:inst4|altsyncram:mem_rtl_0|altsyncram_2vc1:auto_generated|altsyncram:ram_block1a0|altsyncram_qrh3:auto_generated|ram_block1a66" File: C:/TesteLabFPGA-DEV/SO/db/altsyncram_qrh3.tdf Line: 2031
+        Warning (14320): Synthesized away node "memoriaDados:inst4|altsyncram:mem_rtl_0|altsyncram_2vc1:auto_generated|altsyncram:ram_block1a0|altsyncram_qrh3:auto_generated|ram_block1a67" File: C:/TesteLabFPGA-DEV/SO/db/altsyncram_qrh3.tdf Line: 2061
+        Warning (14320): Synthesized away node "memoriaDados:inst4|altsyncram:mem_rtl_0|altsyncram_2vc1:auto_generated|altsyncram:ram_block1a0|altsyncram_qrh3:auto_generated|ram_block1a68" File: C:/TesteLabFPGA-DEV/SO/db/altsyncram_qrh3.tdf Line: 2091
+        Warning (14320): Synthesized away node "memoriaDados:inst4|altsyncram:mem_rtl_0|altsyncram_2vc1:auto_generated|altsyncram:ram_block1a0|altsyncram_qrh3:auto_generated|ram_block1a69" File: C:/TesteLabFPGA-DEV/SO/db/altsyncram_qrh3.tdf Line: 2121
+        Warning (14320): Synthesized away node "memoriaDados:inst4|altsyncram:mem_rtl_0|altsyncram_2vc1:auto_generated|altsyncram:ram_block1a0|altsyncram_qrh3:auto_generated|ram_block1a70" File: C:/TesteLabFPGA-DEV/SO/db/altsyncram_qrh3.tdf Line: 2151
+        Warning (14320): Synthesized away node "memoriaDados:inst4|altsyncram:mem_rtl_0|altsyncram_2vc1:auto_generated|altsyncram:ram_block1a0|altsyncram_qrh3:auto_generated|ram_block1a71" File: C:/TesteLabFPGA-DEV/SO/db/altsyncram_qrh3.tdf Line: 2181
+        Warning (14320): Synthesized away node "memoriaDados:inst4|altsyncram:mem_rtl_0|altsyncram_2vc1:auto_generated|altsyncram:ram_block1a0|altsyncram_qrh3:auto_generated|ram_block1a72" File: C:/TesteLabFPGA-DEV/SO/db/altsyncram_qrh3.tdf Line: 2211
+        Warning (14320): Synthesized away node "memoriaDados:inst4|altsyncram:mem_rtl_0|altsyncram_2vc1:auto_generated|altsyncram:ram_block1a0|altsyncram_qrh3:auto_generated|ram_block1a73" File: C:/TesteLabFPGA-DEV/SO/db/altsyncram_qrh3.tdf Line: 2241
+        Warning (14320): Synthesized away node "memoriaDados:inst4|altsyncram:mem_rtl_0|altsyncram_2vc1:auto_generated|altsyncram:ram_block1a0|altsyncram_qrh3:auto_generated|ram_block1a74" File: C:/TesteLabFPGA-DEV/SO/db/altsyncram_qrh3.tdf Line: 2271
+        Warning (14320): Synthesized away node "memoriaDados:inst4|altsyncram:mem_rtl_0|altsyncram_2vc1:auto_generated|altsyncram:ram_block1a0|altsyncram_qrh3:auto_generated|ram_block1a75" File: C:/TesteLabFPGA-DEV/SO/db/altsyncram_qrh3.tdf Line: 2301
+        Warning (14320): Synthesized away node "memoriaDados:inst4|altsyncram:mem_rtl_0|altsyncram_2vc1:auto_generated|altsyncram:ram_block1a0|altsyncram_qrh3:auto_generated|ram_block1a76" File: C:/TesteLabFPGA-DEV/SO/db/altsyncram_qrh3.tdf Line: 2331
+        Warning (14320): Synthesized away node "memoriaDados:inst4|altsyncram:mem_rtl_0|altsyncram_2vc1:auto_generated|altsyncram:ram_block1a0|altsyncram_qrh3:auto_generated|ram_block1a77" File: C:/TesteLabFPGA-DEV/SO/db/altsyncram_qrh3.tdf Line: 2361
+        Warning (14320): Synthesized away node "memoriaDados:inst4|altsyncram:mem_rtl_0|altsyncram_2vc1:auto_generated|altsyncram:ram_block1a0|altsyncram_qrh3:auto_generated|ram_block1a78" File: C:/TesteLabFPGA-DEV/SO/db/altsyncram_qrh3.tdf Line: 2391
+        Warning (14320): Synthesized away node "memoriaDados:inst4|altsyncram:mem_rtl_0|altsyncram_2vc1:auto_generated|altsyncram:ram_block1a0|altsyncram_qrh3:auto_generated|ram_block1a79" File: C:/TesteLabFPGA-DEV/SO/db/altsyncram_qrh3.tdf Line: 2421
+        Warning (14320): Synthesized away node "memoriaDados:inst4|altsyncram:mem_rtl_0|altsyncram_2vc1:auto_generated|altsyncram:ram_block1a0|altsyncram_qrh3:auto_generated|ram_block1a80" File: C:/TesteLabFPGA-DEV/SO/db/altsyncram_qrh3.tdf Line: 2451
+        Warning (14320): Synthesized away node "memoriaDados:inst4|altsyncram:mem_rtl_0|altsyncram_2vc1:auto_generated|altsyncram:ram_block1a0|altsyncram_qrh3:auto_generated|ram_block1a81" File: C:/TesteLabFPGA-DEV/SO/db/altsyncram_qrh3.tdf Line: 2481
+        Warning (14320): Synthesized away node "memoriaDados:inst4|altsyncram:mem_rtl_0|altsyncram_2vc1:auto_generated|altsyncram:ram_block1a0|altsyncram_qrh3:auto_generated|ram_block1a82" File: C:/TesteLabFPGA-DEV/SO/db/altsyncram_qrh3.tdf Line: 2511
+        Warning (14320): Synthesized away node "memoriaDados:inst4|altsyncram:mem_rtl_0|altsyncram_2vc1:auto_generated|altsyncram:ram_block1a0|altsyncram_qrh3:auto_generated|ram_block1a83" File: C:/TesteLabFPGA-DEV/SO/db/altsyncram_qrh3.tdf Line: 2541
+        Warning (14320): Synthesized away node "memoriaDados:inst4|altsyncram:mem_rtl_0|altsyncram_2vc1:auto_generated|altsyncram:ram_block1a0|altsyncram_qrh3:auto_generated|ram_block1a84" File: C:/TesteLabFPGA-DEV/SO/db/altsyncram_qrh3.tdf Line: 2571
+        Warning (14320): Synthesized away node "memoriaDados:inst4|altsyncram:mem_rtl_0|altsyncram_2vc1:auto_generated|altsyncram:ram_block1a0|altsyncram_qrh3:auto_generated|ram_block1a85" File: C:/TesteLabFPGA-DEV/SO/db/altsyncram_qrh3.tdf Line: 2601
+        Warning (14320): Synthesized away node "memoriaDados:inst4|altsyncram:mem_rtl_0|altsyncram_2vc1:auto_generated|altsyncram:ram_block1a0|altsyncram_qrh3:auto_generated|ram_block1a86" File: C:/TesteLabFPGA-DEV/SO/db/altsyncram_qrh3.tdf Line: 2631
+        Warning (14320): Synthesized away node "memoriaDados:inst4|altsyncram:mem_rtl_0|altsyncram_2vc1:auto_generated|altsyncram:ram_block1a0|altsyncram_qrh3:auto_generated|ram_block1a87" File: C:/TesteLabFPGA-DEV/SO/db/altsyncram_qrh3.tdf Line: 2661
+        Warning (14320): Synthesized away node "memoriaDados:inst4|altsyncram:mem_rtl_0|altsyncram_2vc1:auto_generated|altsyncram:ram_block1a0|altsyncram_qrh3:auto_generated|ram_block1a88" File: C:/TesteLabFPGA-DEV/SO/db/altsyncram_qrh3.tdf Line: 2691
+        Warning (14320): Synthesized away node "memoriaDados:inst4|altsyncram:mem_rtl_0|altsyncram_2vc1:auto_generated|altsyncram:ram_block1a0|altsyncram_qrh3:auto_generated|ram_block1a89" File: C:/TesteLabFPGA-DEV/SO/db/altsyncram_qrh3.tdf Line: 2721
+        Warning (14320): Synthesized away node "memoriaDados:inst4|altsyncram:mem_rtl_0|altsyncram_2vc1:auto_generated|altsyncram:ram_block1a0|altsyncram_qrh3:auto_generated|ram_block1a90" File: C:/TesteLabFPGA-DEV/SO/db/altsyncram_qrh3.tdf Line: 2751
+        Warning (14320): Synthesized away node "memoriaDados:inst4|altsyncram:mem_rtl_0|altsyncram_2vc1:auto_generated|altsyncram:ram_block1a0|altsyncram_qrh3:auto_generated|ram_block1a91" File: C:/TesteLabFPGA-DEV/SO/db/altsyncram_qrh3.tdf Line: 2781
+        Warning (14320): Synthesized away node "memoriaDados:inst4|altsyncram:mem_rtl_0|altsyncram_2vc1:auto_generated|altsyncram:ram_block1a0|altsyncram_qrh3:auto_generated|ram_block1a92" File: C:/TesteLabFPGA-DEV/SO/db/altsyncram_qrh3.tdf Line: 2811
+        Warning (14320): Synthesized away node "memoriaDados:inst4|altsyncram:mem_rtl_0|altsyncram_2vc1:auto_generated|altsyncram:ram_block1a0|altsyncram_qrh3:auto_generated|ram_block1a93" File: C:/TesteLabFPGA-DEV/SO/db/altsyncram_qrh3.tdf Line: 2841
+        Warning (14320): Synthesized away node "memoriaDados:inst4|altsyncram:mem_rtl_0|altsyncram_2vc1:auto_generated|altsyncram:ram_block1a0|altsyncram_qrh3:auto_generated|ram_block1a94" File: C:/TesteLabFPGA-DEV/SO/db/altsyncram_qrh3.tdf Line: 2871
+        Warning (14320): Synthesized away node "memoriaDados:inst4|altsyncram:mem_rtl_0|altsyncram_2vc1:auto_generated|altsyncram:ram_block1a0|altsyncram_qrh3:auto_generated|ram_block1a95" File: C:/TesteLabFPGA-DEV/SO/db/altsyncram_qrh3.tdf Line: 2901
+        Warning (14320): Synthesized away node "memoriaDados:inst4|altsyncram:mem_rtl_0|altsyncram_2vc1:auto_generated|altsyncram:ram_block1a0|altsyncram_qrh3:auto_generated|ram_block1a96" File: C:/TesteLabFPGA-DEV/SO/db/altsyncram_qrh3.tdf Line: 2931
+        Warning (14320): Synthesized away node "memoriaDados:inst4|altsyncram:mem_rtl_0|altsyncram_2vc1:auto_generated|altsyncram:ram_block1a0|altsyncram_qrh3:auto_generated|ram_block1a97" File: C:/TesteLabFPGA-DEV/SO/db/altsyncram_qrh3.tdf Line: 2961
+        Warning (14320): Synthesized away node "memoriaDados:inst4|altsyncram:mem_rtl_0|altsyncram_2vc1:auto_generated|altsyncram:ram_block1a0|altsyncram_qrh3:auto_generated|ram_block1a98" File: C:/TesteLabFPGA-DEV/SO/db/altsyncram_qrh3.tdf Line: 2991
+        Warning (14320): Synthesized away node "memoriaDados:inst4|altsyncram:mem_rtl_0|altsyncram_2vc1:auto_generated|altsyncram:ram_block1a0|altsyncram_qrh3:auto_generated|ram_block1a99" File: C:/TesteLabFPGA-DEV/SO/db/altsyncram_qrh3.tdf Line: 3021
+        Warning (14320): Synthesized away node "memoriaDados:inst4|altsyncram:mem_rtl_0|altsyncram_2vc1:auto_generated|altsyncram:ram_block1a0|altsyncram_qrh3:auto_generated|ram_block1a100" File: C:/TesteLabFPGA-DEV/SO/db/altsyncram_qrh3.tdf Line: 3051
+        Warning (14320): Synthesized away node "memoriaDados:inst4|altsyncram:mem_rtl_0|altsyncram_2vc1:auto_generated|altsyncram:ram_block1a0|altsyncram_qrh3:auto_generated|ram_block1a101" File: C:/TesteLabFPGA-DEV/SO/db/altsyncram_qrh3.tdf Line: 3081
+        Warning (14320): Synthesized away node "memoriaDados:inst4|altsyncram:mem_rtl_0|altsyncram_2vc1:auto_generated|altsyncram:ram_block1a0|altsyncram_qrh3:auto_generated|ram_block1a102" File: C:/TesteLabFPGA-DEV/SO/db/altsyncram_qrh3.tdf Line: 3111
+        Warning (14320): Synthesized away node "memoriaDados:inst4|altsyncram:mem_rtl_0|altsyncram_2vc1:auto_generated|altsyncram:ram_block1a0|altsyncram_qrh3:auto_generated|ram_block1a103" File: C:/TesteLabFPGA-DEV/SO/db/altsyncram_qrh3.tdf Line: 3141
+        Warning (14320): Synthesized away node "memoriaDados:inst4|altsyncram:mem_rtl_0|altsyncram_2vc1:auto_generated|altsyncram:ram_block1a0|altsyncram_qrh3:auto_generated|ram_block1a104" File: C:/TesteLabFPGA-DEV/SO/db/altsyncram_qrh3.tdf Line: 3171
+        Warning (14320): Synthesized away node "memoriaDados:inst4|altsyncram:mem_rtl_0|altsyncram_2vc1:auto_generated|altsyncram:ram_block1a0|altsyncram_qrh3:auto_generated|ram_block1a105" File: C:/TesteLabFPGA-DEV/SO/db/altsyncram_qrh3.tdf Line: 3201
+        Warning (14320): Synthesized away node "memoriaDados:inst4|altsyncram:mem_rtl_0|altsyncram_2vc1:auto_generated|altsyncram:ram_block1a0|altsyncram_qrh3:auto_generated|ram_block1a106" File: C:/TesteLabFPGA-DEV/SO/db/altsyncram_qrh3.tdf Line: 3231
+        Warning (14320): Synthesized away node "memoriaDados:inst4|altsyncram:mem_rtl_0|altsyncram_2vc1:auto_generated|altsyncram:ram_block1a0|altsyncram_qrh3:auto_generated|ram_block1a107" File: C:/TesteLabFPGA-DEV/SO/db/altsyncram_qrh3.tdf Line: 3261
+        Warning (14320): Synthesized away node "memoriaDados:inst4|altsyncram:mem_rtl_0|altsyncram_2vc1:auto_generated|altsyncram:ram_block1a0|altsyncram_qrh3:auto_generated|ram_block1a108" File: C:/TesteLabFPGA-DEV/SO/db/altsyncram_qrh3.tdf Line: 3291
+        Warning (14320): Synthesized away node "memoriaDados:inst4|altsyncram:mem_rtl_0|altsyncram_2vc1:auto_generated|altsyncram:ram_block1a0|altsyncram_qrh3:auto_generated|ram_block1a109" File: C:/TesteLabFPGA-DEV/SO/db/altsyncram_qrh3.tdf Line: 3321
+        Warning (14320): Synthesized away node "memoriaDados:inst4|altsyncram:mem_rtl_0|altsyncram_2vc1:auto_generated|altsyncram:ram_block1a0|altsyncram_qrh3:auto_generated|ram_block1a110" File: C:/TesteLabFPGA-DEV/SO/db/altsyncram_qrh3.tdf Line: 3351
+        Warning (14320): Synthesized away node "memoriaDados:inst4|altsyncram:mem_rtl_0|altsyncram_2vc1:auto_generated|altsyncram:ram_block1a0|altsyncram_qrh3:auto_generated|ram_block1a111" File: C:/TesteLabFPGA-DEV/SO/db/altsyncram_qrh3.tdf Line: 3381
+        Warning (14320): Synthesized away node "memoriaDados:inst4|altsyncram:mem_rtl_0|altsyncram_2vc1:auto_generated|altsyncram:ram_block1a0|altsyncram_qrh3:auto_generated|ram_block1a112" File: C:/TesteLabFPGA-DEV/SO/db/altsyncram_qrh3.tdf Line: 3411
+        Warning (14320): Synthesized away node "memoriaDados:inst4|altsyncram:mem_rtl_0|altsyncram_2vc1:auto_generated|altsyncram:ram_block1a0|altsyncram_qrh3:auto_generated|ram_block1a113" File: C:/TesteLabFPGA-DEV/SO/db/altsyncram_qrh3.tdf Line: 3441
+        Warning (14320): Synthesized away node "memoriaDados:inst4|altsyncram:mem_rtl_0|altsyncram_2vc1:auto_generated|altsyncram:ram_block1a0|altsyncram_qrh3:auto_generated|ram_block1a114" File: C:/TesteLabFPGA-DEV/SO/db/altsyncram_qrh3.tdf Line: 3471
+        Warning (14320): Synthesized away node "memoriaDados:inst4|altsyncram:mem_rtl_0|altsyncram_2vc1:auto_generated|altsyncram:ram_block1a0|altsyncram_qrh3:auto_generated|ram_block1a115" File: C:/TesteLabFPGA-DEV/SO/db/altsyncram_qrh3.tdf Line: 3501
+        Warning (14320): Synthesized away node "memoriaDados:inst4|altsyncram:mem_rtl_0|altsyncram_2vc1:auto_generated|altsyncram:ram_block1a0|altsyncram_qrh3:auto_generated|ram_block1a116" File: C:/TesteLabFPGA-DEV/SO/db/altsyncram_qrh3.tdf Line: 3531
+        Warning (14320): Synthesized away node "memoriaDados:inst4|altsyncram:mem_rtl_0|altsyncram_2vc1:auto_generated|altsyncram:ram_block1a0|altsyncram_qrh3:auto_generated|ram_block1a117" File: C:/TesteLabFPGA-DEV/SO/db/altsyncram_qrh3.tdf Line: 3561
+        Warning (14320): Synthesized away node "memoriaDados:inst4|altsyncram:mem_rtl_0|altsyncram_2vc1:auto_generated|altsyncram:ram_block1a0|altsyncram_qrh3:auto_generated|ram_block1a118" File: C:/TesteLabFPGA-DEV/SO/db/altsyncram_qrh3.tdf Line: 3591
+        Warning (14320): Synthesized away node "memoriaDados:inst4|altsyncram:mem_rtl_0|altsyncram_2vc1:auto_generated|altsyncram:ram_block1a0|altsyncram_qrh3:auto_generated|ram_block1a119" File: C:/TesteLabFPGA-DEV/SO/db/altsyncram_qrh3.tdf Line: 3621
+        Warning (14320): Synthesized away node "memoriaDados:inst4|altsyncram:mem_rtl_0|altsyncram_2vc1:auto_generated|altsyncram:ram_block1a0|altsyncram_qrh3:auto_generated|ram_block1a120" File: C:/TesteLabFPGA-DEV/SO/db/altsyncram_qrh3.tdf Line: 3651
+        Warning (14320): Synthesized away node "memoriaDados:inst4|altsyncram:mem_rtl_0|altsyncram_2vc1:auto_generated|altsyncram:ram_block1a0|altsyncram_qrh3:auto_generated|ram_block1a121" File: C:/TesteLabFPGA-DEV/SO/db/altsyncram_qrh3.tdf Line: 3681
+        Warning (14320): Synthesized away node "memoriaDados:inst4|altsyncram:mem_rtl_0|altsyncram_2vc1:auto_generated|altsyncram:ram_block1a0|altsyncram_qrh3:auto_generated|ram_block1a122" File: C:/TesteLabFPGA-DEV/SO/db/altsyncram_qrh3.tdf Line: 3711
+        Warning (14320): Synthesized away node "memoriaDados:inst4|altsyncram:mem_rtl_0|altsyncram_2vc1:auto_generated|altsyncram:ram_block1a0|altsyncram_qrh3:auto_generated|ram_block1a123" File: C:/TesteLabFPGA-DEV/SO/db/altsyncram_qrh3.tdf Line: 3741
+        Warning (14320): Synthesized away node "memoriaDados:inst4|altsyncram:mem_rtl_0|altsyncram_2vc1:auto_generated|altsyncram:ram_block1a0|altsyncram_qrh3:auto_generated|ram_block1a124" File: C:/TesteLabFPGA-DEV/SO/db/altsyncram_qrh3.tdf Line: 3771
+        Warning (14320): Synthesized away node "memoriaDados:inst4|altsyncram:mem_rtl_0|altsyncram_2vc1:auto_generated|altsyncram:ram_block1a0|altsyncram_qrh3:auto_generated|ram_block1a125" File: C:/TesteLabFPGA-DEV/SO/db/altsyncram_qrh3.tdf Line: 3801
+        Warning (14320): Synthesized away node "memoriaDados:inst4|altsyncram:mem_rtl_0|altsyncram_2vc1:auto_generated|altsyncram:ram_block1a0|altsyncram_qrh3:auto_generated|ram_block1a126" File: C:/TesteLabFPGA-DEV/SO/db/altsyncram_qrh3.tdf Line: 3831
+        Warning (14320): Synthesized away node "memoriaDados:inst4|altsyncram:mem_rtl_0|altsyncram_2vc1:auto_generated|altsyncram:ram_block1a0|altsyncram_qrh3:auto_generated|ram_block1a127" File: C:/TesteLabFPGA-DEV/SO/db/altsyncram_qrh3.tdf Line: 3861
+Warning (13024): Output pins are stuck at VCC or GND
+    Warning (13410): Pin "Instrucao[31]" is stuck at GND
+    Warning (13410): Pin "Instrucao[25]" is stuck at GND
+    Warning (13410): Pin "Instrucao[24]" is stuck at GND
+    Warning (13410): Pin "Instrucao[23]" is stuck at GND
+    Warning (13410): Pin "Instrucao[22]" is stuck at GND
+    Warning (13410): Pin "Instrucao[21]" is stuck at GND
+    Warning (13410): Pin "Instrucao[15]" is stuck at GND
+    Warning (13410): Pin "Instrucao[14]" is stuck at GND
+    Warning (13410): Pin "Instrucao[13]" is stuck at GND
+    Warning (13410): Pin "Instrucao[12]" is stuck at GND
+    Warning (13410): Pin "Instrucao[11]" is stuck at GND
+    Warning (13410): Pin "Instrucao[10]" is stuck at GND
+    Warning (13410): Pin "Instrucao[9]" is stuck at GND
+    Warning (13410): Pin "Instrucao[8]" is stuck at GND
+    Warning (13410): Pin "Instrucao[7]" is stuck at GND
+    Warning (13410): Pin "Instrucao[6]" is stuck at GND
+    Warning (13410): Pin "Instrucao[4]" is stuck at GND
+    Warning (13410): Pin "flagMemRead" is stuck at GND
+    Warning (13410): Pin "flagMemWrite" is stuck at GND
+    Warning (13410): Pin "controle_ula[3]" is stuck at GND
+    Warning (13410): Pin "controle_ula[2]" is stuck at GND
+    Warning (13410): Pin "controle_ula[1]" is stuck at VCC
+    Warning (13410): Pin "controle_ula[0]" is stuck at GND
+    Warning (13410): Pin "extendido[31]" is stuck at GND
+    Warning (13410): Pin "extendido[30]" is stuck at GND
+    Warning (13410): Pin "extendido[29]" is stuck at GND
+    Warning (13410): Pin "extendido[28]" is stuck at GND
+    Warning (13410): Pin "extendido[27]" is stuck at GND
+    Warning (13410): Pin "extendido[26]" is stuck at GND
+    Warning (13410): Pin "extendido[25]" is stuck at GND
+    Warning (13410): Pin "extendido[24]" is stuck at GND
+    Warning (13410): Pin "extendido[23]" is stuck at GND
+    Warning (13410): Pin "extendido[22]" is stuck at GND
+    Warning (13410): Pin "extendido[21]" is stuck at GND
+    Warning (13410): Pin "extendido[20]" is stuck at GND
+    Warning (13410): Pin "extendido[19]" is stuck at GND
+    Warning (13410): Pin "extendido[18]" is stuck at GND
+    Warning (13410): Pin "extendido[17]" is stuck at GND
+    Warning (13410): Pin "extendido[16]" is stuck at GND
+    Warning (13410): Pin "extendido[15]" is stuck at GND
+    Warning (13410): Pin "extendido[14]" is stuck at GND
+    Warning (13410): Pin "extendido[13]" is stuck at GND
+    Warning (13410): Pin "extendido[12]" is stuck at GND
+    Warning (13410): Pin "extendido[11]" is stuck at GND
+    Warning (13410): Pin "extendido[10]" is stuck at GND
+    Warning (13410): Pin "extendido[9]" is stuck at GND
+    Warning (13410): Pin "extendido[8]" is stuck at GND
+    Warning (13410): Pin "extendido[7]" is stuck at GND
+    Warning (13410): Pin "extendido[6]" is stuck at GND
+    Warning (13410): Pin "extendido[4]" is stuck at GND
+    Warning (13410): Pin "RegLeitura1[4]" is stuck at GND
+    Warning (13410): Pin "RegLeitura1[3]" is stuck at GND
+    Warning (13410): Pin "RegLeitura1[2]" is stuck at GND
+    Warning (13410): Pin "RegLeitura1[1]" is stuck at GND
+    Warning (13410): Pin "RegLeitura1[0]" is stuck at GND
+Info (17049): 1 registers lost all their fanouts during netlist optimizations.
+Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
+    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
+Info (21057): Implemented 750 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 11 input pins
+    Info (21059): Implemented 323 output pins
+    Info (21061): Implemented 352 logic cells
+    Info (21064): Implemented 64 RAM segments
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 196 warnings
+    Info: Peak virtual memory: 4760 megabytes
+    Info: Processing ended: Sun Nov 02 23:47:30 2025
+    Info: Elapsed time: 00:00:11
+    Info: Total CPU time (on all processors): 00:00:23
+
+

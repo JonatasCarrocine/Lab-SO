@@ -1,0 +1,14 @@
+Analysis & Synthesis Status : Successful - Sun Nov 02 23:47:29 2025
+Quartus Prime Version : 20.1.0 Build 711 06/05/2020 SJ Lite Edition
+Revision Name : iZero
+Top-level Entity Name : testeSemTemporizador
+Family : Cyclone IV E
+Total logic elements : 299
+    Total combinational functions : 232
+    Dedicated logic registers : 155
+Total registers : 155
+Total pins : 334
+Total virtual pins : 0
+Total memory bits : 2,048
+Embedded Multiplier 9-bit elements : 0
+Total PLLs : 0
